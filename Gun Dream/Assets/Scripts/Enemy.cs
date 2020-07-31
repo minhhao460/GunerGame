@@ -252,7 +252,6 @@ public class Enemy : LivingOB
         if (typeElement == TypeElementEnemy.Freeze)
         {
             MienNhiem(BulletManager.color_Bang);
-            Debug.Log("Mien Nhiem voi bang");
             return;
         }
         if (!(time_bang > 0))
@@ -338,7 +337,6 @@ public class Enemy : LivingOB
                 Health_Color = EffectIsHere.Instance.Health_Color_Poision;
                 break;
             case 4:
-                shield_Bang += 0.5f;
                 typeElement = TypeElementEnemy.Freeze;
                 shield_Bang = Mathf.Min(shield_Bang + 0.5f, 0.9f);
                 Health_Color = EffectIsHere.Instance.Health_Color_Freeze;
