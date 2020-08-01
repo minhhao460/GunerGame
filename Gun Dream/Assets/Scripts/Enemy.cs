@@ -1,13 +1,17 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
 public class Enemy : LivingOB
 {
-    public enum TypeElementEnemy {None, Stun, Fire, Poision, Freeze}
+    public enum TypeElementEnemy { None, Stun, Fire, Poision, Freeze }
     protected TypeElementEnemy typeElement;
     public GameObject posShoot;
     public GameObject posSpawnEffect;
+    public bool PermitMove = true;
+    public float Time_Relax;
 
     public float shield_Lua;
     public float shield_Doc;
@@ -41,7 +45,11 @@ public class Enemy : LivingOB
     float time_bang; // Số lần đóng băng còn lại
     GameObject Ecf_Freeze;
 
-
+    // di chuyen
+    private NavMeshAgent nav;
+    float time_lastMoved;
+    bool moving;
+    Vector3 des;
     protected override void Start()
     {
         if (PhanLoai)
@@ -50,8 +58,9 @@ public class Enemy : LivingOB
         }
         base.Start();
         anim = GetComponent<Animator>();
-        
+        time_lastMoved = UnityEngine.Random.Range(-Time_Relax, 0);
     }
+    
     protected override void Die()
     {
         base.Die();
@@ -59,6 +68,14 @@ public class Enemy : LivingOB
         anim.speed = 1;
         FindEnemy.Instance.Find();
     }
+    private void Update()
+    {
+        UpdateEffect();
+        UpdateMove();
+        Moveto(des);
+    }
+    
+    // Xử lý sác thương nhân vào
     public void NhanDam(BulletManager.TypeDan typeDan, int damage)
     {
         if (dead) return;
@@ -109,10 +126,6 @@ public class Enemy : LivingOB
     float TakeTimeAfterResist(float damage, float shield)
     {
         return (Mathf.Max(damage - shield * damage, 0));
-    }
-    private void Update()
-    {
-        UpdateEffect();
     }
     void UpdateEffect()
     {
@@ -311,23 +324,22 @@ public class Enemy : LivingOB
     {
         return (damage_Lua > 0 || damage_Doc > 0 || time_Choang > 0 || time_bang > 0);
     }
-
     void setTypeElement_Shield_ColorHealth()
     {
-        int random = UnityEngine.Random.Range(0, 4) + 1 ;
+        int random = UnityEngine.Random.Range(0, 4) + 1;
         switch (random)
         {
-            case 1: 
+            case 1:
                 typeElement = TypeElementEnemy.Stun;
                 shield_Choang = Mathf.Min(shield_Choang + 0.5f, 0.9f);
                 Health_Color = EffectIsHere.Instance.Health_Color_Stun;
                 break;
-            case 2: 
+            case 2:
                 typeElement = TypeElementEnemy.Fire;
                 shield_Lua = Mathf.Min(shield_Lua + 0.5f, 0.9f);
                 Health_Color = EffectIsHere.Instance.Health_Color_Fire;
                 break;
-            case 3: 
+            case 3:
                 typeElement = TypeElementEnemy.Poision;
                 shield_Doc = Mathf.Min(shield_Doc + 0.5f, 0.9f);
                 Health_Color = EffectIsHere.Instance.Health_Color_Poision;
@@ -343,11 +355,48 @@ public class Enemy : LivingOB
                 break;
         }
     }
-
     void MienNhiem(Color color)
     {
         ShowMienNhiem mienhiem = Instantiate(EffectIsHere.Instance.ShowMienNhiem) as ShowMienNhiem;
         mienhiem.Set(PosText3D.transform.position, "Miễn nhiễm", color);
     }
+
+
+    // Xử lý với tấn công Player
+
+    // Xử lý di chuyển
+    void Moveto(Vector3 a)
+    {
+        if (nav == null)
+        {
+            return;
+        }
+        Debug.Log(a);
+        Debug.Log(transform.position);
+
+        nav.SetDestination(a);
+    }
+
+    protected virtual void UpdateMove()
+    {
+        if (nav == null)
+            nav = GetComponent<NavMeshAgent>();
+        if (nav == null)
+            return;
+        if (Time.time - time_lastMoved > Time_Relax && !moving)
+        {
+            nav.speed = 2;
+            nav.angularSpeed = 1000;
+            des = MyPoint.Instance.getOnePoint(transform.position.y, gameObject.transform.position, 50);
+            moving = true;
+        } else 
+        if (nav.isStopped && moving)
+        {
+            moving = false;
+            time_lastMoved = Time.time;
+        }
+        Debug.Log(nav.isStopped);
+    }
+
 
 }

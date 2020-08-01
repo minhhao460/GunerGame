@@ -4,25 +4,41 @@ using UnityEngine;
 
 public class MyPoint : MonoBehaviour
 {
-    public MyPoint Instance { get; private set; }
-    public List<GetPoint> listgetpoint;
-
-    public void add(GetPoint get)
+    public static MyPoint Instance { get; private set; }
+    public GetPoint[] listgetpoint;
+    private void Awake()
     {
-        listgetpoint.Add(get);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else
+        {
+            Destroy(gameObject);
+        }
     }
 
-
-    public void getOnePoint(Vector3 vtri, float maxDistance)
+    private void Start()
     {
-        List<GetPoint> listcurrengetpoint = null;
-        for (int i = 0; i < listgetpoint.Count; i++)
+        listgetpoint = FindObjectsOfType<GetPoint>();
+        Debug.Log("Soluong GetPoint: " + listgetpoint.Length);
+    }
+
+    public Vector3 getOnePoint(float posY, Vector3 vtri, float maxDistance)
+    {
+        List<GetPoint> listcurrengetpoint = new List<GetPoint>();
+        if (listgetpoint.Length == 0)
+            return vtri;
+        for (int i = 0; i < listgetpoint.Length; i++)
         {
             if (Vector3.Distance(vtri, listgetpoint[i].gameObject.transform.position) < maxDistance)
             {
                 listcurrengetpoint.Add(listgetpoint[i]);
             }
         }
-
+        if (listcurrengetpoint.Count == 0)
+            return vtri;
+        int random = Random.Range(0, listcurrengetpoint.Count);
+        return listcurrengetpoint[random].getPoint(posY);
     }
 }

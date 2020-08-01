@@ -54,7 +54,6 @@ public class FindEnemy : MonoBehaviour
 
                     if (!Physics.Raycast(playerControl.Eye.transform.position, huongLook, khoangcach, Wall))
                     {
-                        Debug.Log("Tim duoc ne");
                         if (khoangcach < khoangcachgannhat)
                         {
                             khoangcachgannhat = khoangcach;

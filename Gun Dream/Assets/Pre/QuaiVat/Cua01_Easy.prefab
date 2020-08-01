@@ -50,8 +50,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.642784, y: 2.4644775, z: 3.4783325}
-  m_Center: {x: 0.02913475, y: 1.5391083, z: -0.036483765}
+  m_Size: {x: 4.642784, y: 2.9356155, z: 3.4783325}
+  m_Center: {x: 0.02913475, y: 1.3035393, z: -0.036483765}
 --- !u!95 &4480886731505112028
 Animator:
   serializedVersion: 3
@@ -93,6 +93,8 @@ MonoBehaviour:
   PosShowHealth: {fileID: 3391100957604360232}
   posShoot: {fileID: 4062273466739561299}
   posSpawnEffect: {fileID: 8301607721269572566}
+  PermitMove: 1
+  Time_Relax: 2
   shield_Lua: 0.1
   shield_Doc: 0.1
   shield_Choang: 0.1

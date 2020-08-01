@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\SpawnLuyenTap.cs" />
     <Compile Include="Assets\Scripts\SungLuc.cs" />
     <Compile Include="Assets\Scripts\VienDan.cs" />
+    <Compile Include="Assets\TestController.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

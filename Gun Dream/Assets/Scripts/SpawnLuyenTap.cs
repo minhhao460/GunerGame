@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SpawnLuyenTap : MonoBehaviour
 {
@@ -48,8 +49,18 @@ public class SpawnLuyenTap : MonoBehaviour
 
     void Spawn()
     {
-        Vector3 pos = GetComponent<GetPointInSquare>().getPoint(0f);
+        Vector3 pos = GetComponent<GetPointInSquare>().getPoint(3f);
         GameObject cua = Instantiate(Cua, gameObject.transform);
-        cua.transform.position = pos;
+        NavMeshHit closestHit;
+        if (NavMesh.SamplePosition(pos, out closestHit, 40, 3)){
+            cua.transform.position = closestHit.position;
+            cua.AddComponent<NavMeshAgent>();
+        } else
+        {
+            Debug.Log("Khong tim thay noi spawn");
+            Destroy(cua);
+        }
+
+
     }
 }
