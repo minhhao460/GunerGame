@@ -84,10 +84,15 @@
     <Compile Include="Assets\Scripts\FloatingText.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\GetGunFromMap.cs" />
+    <Compile Include="Assets\Scripts\GetPointInRectangle.cs" />
+    <Compile Include="Assets\Scripts\GetPointInSquare.cs" />
+    <Compile Include="Assets\Scripts\GetPointIncircle.cs" />
     <Compile Include="Assets\Scripts\GunManager.cs" />
+    <Compile Include="Assets\Scripts\Interface\GetPoint.cs" />
     <Compile Include="Assets\Scripts\JoyButton.cs" />
     <Compile Include="Assets\Scripts\LivingOB.cs" />
     <Compile Include="Assets\Scripts\MenuMapGame.cs" />
+    <Compile Include="Assets\Scripts\MyPoint.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\SeeTarget.cs" />
@@ -95,7 +100,6 @@
     <Compile Include="Assets\Scripts\ShowHealth.cs" />
     <Compile Include="Assets\Scripts\ShowMienNhiem.cs" />
     <Compile Include="Assets\Scripts\SpawnAfterIn.cs" />
-    <Compile Include="Assets\Scripts\SpawnInCube.cs" />
     <Compile Include="Assets\Scripts\SpawnLuyenTap.cs" />
     <Compile Include="Assets\Scripts\SungLuc.cs" />
     <Compile Include="Assets\Scripts\VienDan.cs" />

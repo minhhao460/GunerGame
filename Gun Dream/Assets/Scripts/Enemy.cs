@@ -145,9 +145,6 @@ public class Enemy : LivingOB
         }
         MoveSpeed = tilemove * MoveSpeedStart;
         anim.speed = tilemove_anim;
-        Debug.Log("MoveSpeed:" + MoveSpeed);
-        Debug.Log("AnimatorSpeed:" + anim.speed);
-
     }
 
     void DeCreaseLua()
@@ -318,7 +315,6 @@ public class Enemy : LivingOB
     void setTypeElement_Shield_ColorHealth()
     {
         int random = UnityEngine.Random.Range(0, 4) + 1 ;
-        Debug.Log(random);
         switch (random)
         {
             case 1: 

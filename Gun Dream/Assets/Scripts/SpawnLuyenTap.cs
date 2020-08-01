@@ -8,7 +8,7 @@ public class SpawnLuyenTap : MonoBehaviour
     public GameObject Cua;
     public int MaxEnemy;
     public float DoLech;
-    public Vector3 TrungTam;
+    public Transform TrungTam;
     public LayerMask target;
     bool spawning;
     // Start is called before the first frame update
@@ -36,8 +36,8 @@ public class SpawnLuyenTap : MonoBehaviour
         spawning = true;
         while (testPlayer.GetComponent<SpawnAfterIn>().PlayerIn)
         {
-            Collider[] enemy = Physics.OverlapSphere(TrungTam, DoLech, target);
-            if (enemy.Length < 5)
+            Collider[] enemy = Physics.OverlapBox(TrungTam.position, new Vector3(DoLech, 10, DoLech), Quaternion.identity, target);
+            if (enemy.Length < MaxEnemy)
             {
                 Spawn();
             }
@@ -48,7 +48,7 @@ public class SpawnLuyenTap : MonoBehaviour
 
     void Spawn()
     {
-        Vector3 pos = new Vector3(TrungTam.x + Random.Range(-DoLech, DoLech), 0, TrungTam.z + Random.Range(-DoLech, DoLech));
+        Vector3 pos = GetComponent<GetPointInSquare>().getPoint(0f);
         GameObject cua = Instantiate(Cua, gameObject.transform);
         cua.transform.position = pos;
     }

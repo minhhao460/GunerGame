@@ -52,6 +52,7 @@ public class LivingOB : MonoBehaviour
     protected virtual void Die()
     {
         gameObject.layer = LayerMask.NameToLayer("Default");
+        showHealth.gameObject.SetActive(false);
     }
 
     protected void TakeHit(int damage, Color color)

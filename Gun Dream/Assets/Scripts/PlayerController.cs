@@ -102,11 +102,13 @@ public class PlayerController : LivingOB
         if (SungHienTai == null)
         {
             return false;
-        } else
+        }
+        else
         {
             return true;
         }
     }
+
 
 
 
