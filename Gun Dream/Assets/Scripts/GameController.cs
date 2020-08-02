@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -60,6 +61,20 @@ public class GameController : MonoBehaviour
     public static bool SacXuat(float a)
     {
         return !(a < UnityEngine.Random.Range(0f, 1f));
+    }
+
+    public static Vector3 FixedPosByNavMesh(Vector3 pos)
+    {
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(pos, out hit, 10, 1))
+        {
+            return hit.position;
+        }
+        else
+        {
+            Debug.LogWarning("Khong Tim thay SamplePosition");
+            return pos;
+        }
     }
 
 }

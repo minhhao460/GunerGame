@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -49,6 +50,7 @@ public class Enemy : LivingOB
     private NavMeshAgent nav;
     float time_lastMoved;
     bool moving;
+    bool relaxing;
     Vector3 des;
     protected override void Start()
     {
@@ -58,7 +60,8 @@ public class Enemy : LivingOB
         }
         base.Start();
         anim = GetComponent<Animator>();
-        time_lastMoved = UnityEngine.Random.Range(-Time_Relax, 0);
+        nav = GetComponent<NavMeshAgent>();
+        time_lastMoved = Time.time + UnityEngine.Random.Range(-Time_Relax, 0);
     }
     
     protected override void Die()
@@ -72,7 +75,6 @@ public class Enemy : LivingOB
     {
         UpdateEffect();
         UpdateMove();
-        Moveto(des);
     }
     
     // Xử lý sác thương nhân vào
@@ -157,6 +159,7 @@ public class Enemy : LivingOB
             DeCreaseChoang();
         }
         MoveSpeed = tilemove * MoveSpeedStart;
+        nav.speed = MoveSpeed;
         anim.speed = tilemove_anim;
     }
 
@@ -367,36 +370,36 @@ public class Enemy : LivingOB
     // Xử lý di chuyển
     void Moveto(Vector3 a)
     {
-        if (nav == null)
+        if (nav.SetDestination(a))
         {
-            return;
+            moving = true;
+            SetAnimationMove(true);
         }
-        Debug.Log(a);
-        Debug.Log(transform.position);
-
-        nav.SetDestination(a);
     }
 
     protected virtual void UpdateMove()
     {
-        if (nav == null)
-            nav = GetComponent<NavMeshAgent>();
-        if (nav == null)
+        if (dead) {
+            nav.ResetPath();
             return;
+        }
         if (Time.time - time_lastMoved > Time_Relax && !moving)
         {
-            nav.speed = 2;
-            nav.angularSpeed = 1000;
-            des = MyPoint.Instance.getOnePoint(transform.position.y, gameObject.transform.position, 50);
-            moving = true;
-        } else 
-        if (nav.isStopped && moving)
-        {
-            moving = false;
-            time_lastMoved = Time.time;
+            des = MyPoint.Instance.getOnePoint(1, gameObject.transform.position, 50);
+            des = GameController.FixedPosByNavMesh(des);
+            Moveto(des);
         }
-        Debug.Log(nav.isStopped);
+        bool done = Vector3.Distance(des, transform.position) < nav.stoppingDistance;
+        if (done && moving)
+        {
+            time_lastMoved = Time.time;
+            moving = false;
+            SetAnimationMove(false);
+        }
     }
 
-
+    protected virtual void SetAnimationMove(bool a)
+    {
+        anim.SetBool("Move", a);
+    }
 }

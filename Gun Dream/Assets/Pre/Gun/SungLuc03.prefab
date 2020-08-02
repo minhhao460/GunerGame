@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1820918450918711456}
   - component: {fileID: 9028055049261651685}
+  - component: {fileID: 785057162124791971}
   m_Layer: 0
   m_Name: SungLuc03
   m_TagString: Untagged
@@ -84,6 +85,23 @@ MonoBehaviour:
   LoaiDan: 3
   viendan:
   - {fileID: 6099369846395906127, guid: 5cfd5ad414448754f8fff752075dea45, type: 3}
+  - {fileID: 6099369846395906127, guid: 5cfd5ad414448754f8fff752075dea45, type: 3}
+  - {fileID: 6099369846395906127, guid: 5cfd5ad414448754f8fff752075dea45, type: 3}
+  - {fileID: 6099369846395906127, guid: 5cfd5ad414448754f8fff752075dea45, type: 3}
+--- !u!114 &785057162124791971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186838466973416661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e38665cca59464cabd3afb7bb5e335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HinhAnh: {fileID: 21300000, guid: 4893a4f414dce134db780ca13b7b5819, type: 3}
+  colorhe: {r: 0.28960717, g: 1, b: 0, a: 1}
 --- !u!1001 &1722074568666025295
 PrefabInstance:
   m_ObjectHideFlags: 0

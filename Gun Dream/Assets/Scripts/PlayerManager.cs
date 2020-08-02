@@ -12,14 +12,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        if(Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        } else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
         SpawnPlayer();
     }
 

@@ -10,14 +10,7 @@ public class CVDK : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        } else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
 
     // Update is called once per frame

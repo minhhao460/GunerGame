@@ -49,17 +49,9 @@ public class SpawnLuyenTap : MonoBehaviour
 
     void Spawn()
     {
-        Vector3 pos = GetComponent<GetPointInSquare>().getPoint(3f);
-        GameObject cua = Instantiate(Cua, gameObject.transform);
-        NavMeshHit closestHit;
-        if (NavMesh.SamplePosition(pos, out closestHit, 40, 3)){
-            cua.transform.position = closestHit.position;
-            cua.AddComponent<NavMeshAgent>();
-        } else
-        {
-            Debug.Log("Khong tim thay noi spawn");
-            Destroy(cua);
-        }
+        Vector3 pos = GetComponent<GetPointInSquare>().getPoint(0.1f);
+        pos = GameController.FixedPosByNavMesh(pos);
+        Instantiate(Cua, pos, Quaternion.identity);
 
 
     }

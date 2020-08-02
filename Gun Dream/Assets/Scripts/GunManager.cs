@@ -13,19 +13,12 @@ public class GunManager : MonoBehaviour
     public static GunManager Instance { get; private set; }
 
     public GameObject[] SungLuc;
-
+    public HienThiThongTInSung hienthi;
     public static GameObject GunFromMap;
     public static TypeSung TypeGunFromMap;
     private void Awake()
     {
-        if (Instance == null)
-        {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        } else
-        {
-            Destroy(gameObject);
-        }
     }
 
     public void getSungLuc(string a)
@@ -51,6 +44,16 @@ public class GunManager : MonoBehaviour
                 break;
         }
     }
+    private void Update()
+    {
+        if (GunFromMap != null)
+        {
+            hienthi.gameObject.SetActive(true);
+        } else
+        {
+            hienthi.gameObject.SetActive(false);
+        }
+    } 
 
     public void  getSung(TypeSung type, GameObject Sung)
     {
