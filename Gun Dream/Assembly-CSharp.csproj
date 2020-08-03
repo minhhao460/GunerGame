@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HienThiThongTInSung.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
@@ -71,7 +70,6 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
-    <Compile Include="Assets\STRINGS.cs" />
     <Compile Include="Assets\Scripts\AudioController.cs" />
     <Compile Include="Assets\Scripts\BuildMap1.cs" />
     <Compile Include="Assets\Scripts\BulletManager.cs" />
@@ -92,6 +90,8 @@
     <Compile Include="Assets\Scripts\GetPointIncircle.cs" />
     <Compile Include="Assets\Scripts\GunController.cs" />
     <Compile Include="Assets\Scripts\GunManager.cs" />
+    <Compile Include="Assets\Scripts\HienThiThongTInSung.cs" />
+    <Compile Include="Assets\Scripts\InfoGun\AK47.cs" />
     <Compile Include="Assets\Scripts\InfoGun\SungLuc_AnhSang.cs" />
     <Compile Include="Assets\Scripts\InfoGun\SungLuc_Bang.cs" />
     <Compile Include="Assets\Scripts\InfoGun\SungLuc_Doc.cs" />
@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\MyPoint.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\STRINGS.cs" />
     <Compile Include="Assets\Scripts\SeeTarget.cs" />
     <Compile Include="Assets\Scripts\Shooter.cs" />
     <Compile Include="Assets\Scripts\ShowHealth.cs" />

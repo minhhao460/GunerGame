@@ -52,7 +52,6 @@ MonoBehaviour:
   TimeToDestroy: 3
   TargetDestroy: {fileID: 2367144069399171526}
   Type: 1
-  DamageDecrease: 0
   No: {fileID: 3785360320588258992, guid: 887504d2871c0d844b28ba9082316196, type: 3}
 --- !u!65 &-7908354190627620284
 BoxCollider:

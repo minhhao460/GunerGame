@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doGiat: 5
-  Damage: 25
+  Damage: 20
   TocDoBay: 100
   spawnDan: {fileID: 897038535202302233}
   TocDoBan: 3

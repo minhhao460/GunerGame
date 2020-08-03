@@ -9,7 +9,6 @@ public class VienDan : MonoBehaviour
     public float TimeToDestroy;
     public GameObject TargetDestroy;
     public BulletManager.TypeDan Type;
-    public int DamageDecrease;
     public GameObject No;
 
     private int damage;
@@ -51,7 +50,7 @@ public class VienDan : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, moveDistance, DoiTuong, QueryTriggerInteraction.Collide))
+        if (Physics.Raycast(ray, out hit, moveDistance, DoiTuong))
         {
             OnHitEnemy(hit);
         }

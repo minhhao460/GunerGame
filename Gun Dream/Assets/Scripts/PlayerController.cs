@@ -6,6 +6,8 @@ public class PlayerController : LivingOB
 {
     public GameObject SpawnSungLuc;
     public GameObject SpawnSungTruong;
+
+    [HideInInspector]
     public GameObject SungHienTai;
     public GameObject Eye;
     private DieuKhien dk;
@@ -95,6 +97,11 @@ public class PlayerController : LivingOB
     public float getMoveSpeed()
     {
         return MoveSpeed;
+    }
+
+    public void setSungHienTai(GameObject sung)
+    {
+        SungHienTai = sung;
     }
 
     public bool HaveGunInHand()

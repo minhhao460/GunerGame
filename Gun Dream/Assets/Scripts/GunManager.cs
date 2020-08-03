@@ -60,8 +60,20 @@ public class GunManager : MonoBehaviour
         if (type == TypeSung.SungLuc)
         {
             CheckGunToDesTroy();
+            PlayerController playercontroller = PlayerManager.Instance.Player.GetComponent<PlayerController>();
             AudioController.Instance.Play_ThaySung();
-            Instantiate(Sung, PlayerManager.Instance.Player.GetComponent<PlayerController>().SpawnSungLuc.transform);
+            GameObject sung = Instantiate(Sung, playercontroller.SpawnSungLuc.transform);
+            playercontroller.setSungHienTai(sung);
+            playercontroller.CamSungLuc();
+        }
+        if (type == TypeSung.SungTruong)
+        {
+            CheckGunToDesTroy();
+            PlayerController playercontroller = PlayerManager.Instance.Player.GetComponent<PlayerController>();
+            AudioController.Instance.Play_ThaySung();
+            GameObject sung = Instantiate(Sung, playercontroller.SpawnSungTruong.transform);
+            playercontroller.setSungHienTai(sung);
+            playercontroller.CamSungTruong();
         }
     }
 

@@ -21,11 +21,6 @@ public class Shooter : MonoBehaviour
     {
         player = PlayerManager.Instance.Player;
         anim = player.GetComponent<Animator>();
-        if (LoaiSung == GunManager.TypeSung.SungLuc)
-            player.GetComponent<PlayerController>().CamSungLuc();
-        if (LoaiSung == GunManager.TypeSung.SungTruong)
-            player.GetComponent<PlayerController>().CamSungTruong();
-        player.GetComponent<PlayerController>().SungHienTai = this.gameObject;
         dk = FindObjectOfType<DieuKhien>();
         m_BanLanCuoi_Time = Time.time;
     }

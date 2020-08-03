@@ -324,6 +324,7 @@ Transform:
   - {fileID: 8714000865604595835}
   - {fileID: 7901429659061306850}
   - {fileID: 7182990791434283121}
+  - {fileID: 2310644761200808011}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -348,7 +349,7 @@ MonoBehaviour:
   PosLechText3D: 0
   PosShowHealth: {fileID: 7901429659061306850}
   SpawnSungLuc: {fileID: 6137694980423081333}
-  SpawnSungTruong: {fileID: 0}
+  SpawnSungTruong: {fileID: 1409395653474657478}
   SungHienTai: {fileID: 0}
   Eye: {fileID: 4270773413088267941}
 --- !u!54 &7019178910697860056
@@ -431,6 +432,36 @@ Transform:
   m_Father: {fileID: 2121968541118547037}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 88.609, y: 132.597, z: 131.17401}
+--- !u!1 &1409395653474657478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2310644761200808011}
+  m_Layer: 0
+  m_Name: SpawnSungTruong
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2310644761200808011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409395653474657478}
+  m_LocalRotation: {x: -2.0272416e-18, y: -0.12887536, z: -0.000000015363138, w: 0.9916608}
+  m_LocalPosition: {x: 1, y: 3.96, z: 1.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4216390976754821911}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: -14.809001, z: 0}
 --- !u!1 &1996314055920828727
 GameObject:
   m_ObjectHideFlags: 0

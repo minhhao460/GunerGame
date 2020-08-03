@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
@@ -89,7 +90,7 @@ public class Enemy : LivingOB
         {
             case (BulletManager.TypeDan.None):
                 damageMain = TakeHitAfterResist(damage, Shield);
-                TakeHit(damageMain);
+                TakeHit(damageMain, BulletManager.color_Default);
                 break;
 
             case (BulletManager.TypeDan.Lua):
@@ -128,6 +129,10 @@ public class Enemy : LivingOB
     float TakeTimeAfterResist(float damage, float shield)
     {
         return (Mathf.Max(damage - shield * damage, 0));
+    }
+    int TakeHitAfterResist(float tiledamage, float shield)
+    {
+        return Mathf.CeilToInt((tiledamage * StartHealth) - (tiledamage * StartHealth * shield));
     }
     void UpdateEffect()
     {

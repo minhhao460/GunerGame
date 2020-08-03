@@ -88,14 +88,14 @@ MonoBehaviour:
   StartHealth: 100
   StartMana: 0
   MoveSpeedStart: 5
-  StartShield: 0.1
+  StartShield: 0.3
   PosText3D: {fileID: 2512365236649377167}
   PosLechText3D: 2
   PosShowHealth: {fileID: 3391100957604360232}
   posShoot: {fileID: 4062273466739561299}
   posSpawnEffect: {fileID: 8301607721269572566}
   PermitMove: 1
-  Time_Relax: 2
+  Time_Relax: 5
   shield_Lua: 0.1
   shield_Doc: 0.1
   shield_Choang: 0.1

@@ -80,7 +80,7 @@ MonoBehaviour:
   Damage: 30
   TocDoBay: 100
   spawnDan: {fileID: 897038535202302233}
-  TocDoBan: 3
+  TocDoBan: 2.5
   LoaiSung: 1
   LoaiDan: 4
   viendan:

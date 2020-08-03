@@ -11,17 +11,17 @@ public class BulletManager : MonoBehaviour
 
     // Fire
     public static Color color_Lua = Color.red;
-    public static int Lua = 50;
+    public static float Lua = 0.4f;
     public static float Timedelay_Lua = 0.2f;
-    public static int dama_everyTime_Lua = 3;
+    public static float dama_everyTime_Lua = 0.05f;
     public static float TiLe_Lua = 0.3f;
 
 
     // Poison
     public static Color color_Doc = Color.green;
-    public static int Doc = 60;
+    public static float Doc = 0.6f;
     public static float TimeDelay_Doc = 2f;
-    public static int dama_everyTime_Doc = 10;
+    public static float dama_everyTime_Doc = 0.2f;
     public static float Tile_Doc = 0.4f;
 
     // Stun
@@ -34,6 +34,8 @@ public class BulletManager : MonoBehaviour
     public static float Time_Bang = 5f; // Thời gian đóng băng
     public static float Tile_Bang = 1;
     public static float Tile_DeMove = 0.5f;
+
+    public static Color color_Default = new Color(255, 255, 189);
 
     private void Awake()
     {
