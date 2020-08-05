@@ -38,8 +38,8 @@ public class FindEnemy : MonoBehaviour
                 int k = -1;
                 for (int i = 0; i < collider.Length; i++)
                 {
-                    Transform target = collider[i].transform;
-                    Transform targetShoot = collider[i].GetComponent<Enemy>().posShoot.transform;
+                    Transform target = collider[i].GetComponent<GetEnemyComponent>().EnemyTarget.gameObject.transform;
+                    Transform targetShoot = target.GetComponent<Enemy>().posShoot.transform;
                     Vector3 huongQuay = (target.position - player.transform.position).normalized;
                     Vector3 huongLook = (targetShoot.position - playerControl.Eye.transform.position).normalized;
                     float khoangcach = Vector3.Distance(playerControl.Eye.transform.position, targetShoot.transform.position);

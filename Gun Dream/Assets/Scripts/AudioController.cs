@@ -4,22 +4,38 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-    public AudioSource ThaySung;
-    public AudioSource SungLucShoot;
+    public AudioSource[] Audio_Shoot;
+    public string[] codeAudio;
     public static AudioController Instance { get; private set; }
     // Start is called before the first frame update
     private void Awake()
     {
-            Instance = this;
+          Instance = this;
     }
 
-    public void Play_ThaySung()
+    public void PlayAudio(string code)
     {
-        ThaySung.Play();
+        for (int i = 0; i < Audio_Shoot.Length; i++)
+        {
+            if (code == codeAudio[i])
+            {
+                PlayAudio(i);
+                return;
+            }
+        }
+        Debug.LogWarning("Khong tim thay code (string) audio");
     }
 
-    public void Play_SungLucShoot()
+    public void PlayAudio(int code)
     {
-        SungLucShoot.Play();
+        if (Audio_Shoot[code] != null)
+        {
+            Audio_Shoot[code].Play();
+        } else
+        {
+            Debug.LogWarning("Audio ko được tìm thấy: Mã code: " + codeAudio[code] + ".");
+        }
     }
+
+    
 }

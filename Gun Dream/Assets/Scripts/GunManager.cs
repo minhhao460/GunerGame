@@ -61,7 +61,7 @@ public class GunManager : MonoBehaviour
         {
             CheckGunToDesTroy();
             PlayerController playercontroller = PlayerManager.Instance.Player.GetComponent<PlayerController>();
-            AudioController.Instance.Play_ThaySung();
+            AudioController.Instance.PlayAudio("ThaySung");
             GameObject sung = Instantiate(Sung, playercontroller.SpawnSungLuc.transform);
             playercontroller.setSungHienTai(sung);
             playercontroller.CamSungLuc();
@@ -70,7 +70,7 @@ public class GunManager : MonoBehaviour
         {
             CheckGunToDesTroy();
             PlayerController playercontroller = PlayerManager.Instance.Player.GetComponent<PlayerController>();
-            AudioController.Instance.Play_ThaySung();
+            AudioController.Instance.PlayAudio("ThaySung");
             GameObject sung = Instantiate(Sung, playercontroller.SpawnSungTruong.transform);
             playercontroller.setSungHienTai(sung);
             playercontroller.CamSungTruong();

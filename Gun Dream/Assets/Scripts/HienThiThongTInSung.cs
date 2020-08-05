@@ -16,6 +16,7 @@ public class HienThiThongTInSung : MonoBehaviour
     public Slider SliAS;
     public Text Info;
     public Text InfoHe;
+    public Image fixecolor;
 
     private GunController guncontroller;
     private void OnEnable()
@@ -41,5 +42,7 @@ public class HienThiThongTInSung : MonoBehaviour
 
         InfoHe.text = guncontroller.getInfoHe();
         InfoHe.color = guncontroller.getColorHe();
+
+        fixecolor.color = guncontroller.getFixedColor();
     }
 }

@@ -72,6 +72,8 @@ public class DieuKhien : MonoBehaviour
 
     void setRotation(Vector3 a)
     {
+        if (a == Vector3.zero)
+            return;
         m_Rotation = Quaternion.LookRotation(a);
         player.transform.rotation = m_Rotation;
     }

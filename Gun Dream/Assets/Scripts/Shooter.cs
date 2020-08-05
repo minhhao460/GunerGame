@@ -13,14 +13,12 @@ public class Shooter : MonoBehaviour
     public BulletManager.TypeDan LoaiDan;
     public VienDan[] viendan;
     private GameObject player;
-    private Animator anim;
     private float m_BanLanCuoi_Time;
     private DieuKhien dk;
     // Start is called before the first frame update
     private void Start()
     {
         player = PlayerManager.Instance.Player;
-        anim = player.GetComponent<Animator>();
         dk = FindObjectOfType<DieuKhien>();
         m_BanLanCuoi_Time = Time.time;
     }
@@ -32,7 +30,7 @@ public class Shooter : MonoBehaviour
         {
             return;
         }
-        AudioController.Instance.Play_SungLucShoot();
+        PlayAudioShoot();
         Vector3 a;
         if (FindEnemy.Instance.HaveEnemy())
         {
@@ -53,6 +51,11 @@ public class Shooter : MonoBehaviour
         dan.setSpeed(TocDoBay);
         dan.setDamage(Damage);
         m_BanLanCuoi_Time = Time.time;
+    }
+
+    protected virtual void PlayAudioShoot()
+    {
+        AudioController.Instance.PlayAudio("SungLuc");
     }
 
 

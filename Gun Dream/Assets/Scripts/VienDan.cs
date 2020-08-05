@@ -58,7 +58,7 @@ public class VienDan : MonoBehaviour
 
     void OnHitEnemy(RaycastHit hit)
     {
-        Enemy enemy = hit.collider.GetComponent<Enemy>();
+        Enemy enemy = hit.collider.GetComponent<GetEnemyComponent>().EnemyTarget;
         if (enemy != null && enemy.Keeper != LivingOB.TypeLiving.Player)
         {
             enemy.NhanDam(Type, damage);
@@ -66,6 +66,12 @@ public class VienDan : MonoBehaviour
             GameObject a = Instantiate(No);
             a.transform.position = hit.point;
             Destroy(a, 0.2f);
+        } else
+        {
+            if (enemy == null)
+            {
+                Debug.LogWarning("Component Enemy không tồn tại");
+            }
         }
     }
 

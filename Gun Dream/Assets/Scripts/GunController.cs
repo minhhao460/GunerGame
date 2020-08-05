@@ -10,6 +10,7 @@ public class GunController : MonoBehaviour, ThongTInSungManager
     public static float MaxAttrackSpeed = 10;
     public Sprite HinhAnh;
     public Color colorhe;
+    public Color fixedcolorhe = new Color(0, 0.475f, 1, 0.439f);
 
     #region Bắt buộc Overide
     public virtual float getAS()
@@ -44,6 +45,11 @@ public class GunController : MonoBehaviour, ThongTInSungManager
     public Color getColorHe()
     {
         return colorhe;
+    }
+
+    public Color getFixedColor()
+    {
+        return fixedcolorhe;
     }
     #endregion
 }

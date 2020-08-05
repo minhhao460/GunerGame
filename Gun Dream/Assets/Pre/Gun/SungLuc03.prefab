@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HinhAnh: {fileID: 21300000, guid: 4893a4f414dce134db780ca13b7b5819, type: 3}
   colorhe: {r: 0.28960717, g: 1, b: 0, a: 1}
+  fixedcolorhe: {r: 0.7555547, g: 0, b: 1, a: 0.39215687}
 --- !u!1001 &1722074568666025295
 PrefabInstance:
   m_ObjectHideFlags: 0
