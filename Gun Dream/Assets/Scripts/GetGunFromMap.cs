@@ -8,8 +8,25 @@ public class GetGunFromMap : MonoBehaviour
     public GunManager.TypeSung TypeSung;
     public GameObject ThisGun;
     public Vector3 localScale;
+    public bool DestroyOnGet;
 
-    private void Start()
+    public void CheckToDestroy()
+    {
+        if (DestroyOnGet)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    public void AddGun(Shooter ThisGun, bool DestroyOnGet)
+    {
+        this.ThisGun = ThisGun.gameObject;
+        TypeSung = ThisGun.LoaiSung;
+        localScale = ThisGun.SpawnSung.localScale;
+        this.DestroyOnGet = DestroyOnGet;
+        Spawn();
+    }
+
+    public void Spawn()
     {
         Instantiate(ThisGun, AnimationSung, false).transform.localScale = localScale;
     }

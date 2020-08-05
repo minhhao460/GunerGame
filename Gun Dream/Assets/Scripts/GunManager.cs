@@ -14,11 +14,13 @@ public class GunManager : MonoBehaviour
 
     public GameObject[] SungLuc;
     public HienThiThongTInSung hienthi;
-    public static GameObject GunFromMap;
-    public static TypeSung TypeGunFromMap;
+
+    public GameObject GunFromMap;
+    public GetGunFromMap SpawnGunFromMap;
+    public TypeSung TypeGunFromMap;
     private void Awake()
     {
-            Instance = this;
+         Instance = this;
     }
 
     public void getSungLuc(string a)
@@ -90,6 +92,7 @@ public class GunManager : MonoBehaviour
         if (GunFromMap != null)
         {
             getSung(TypeGunFromMap, GunFromMap);
+            SpawnGunFromMap.CheckToDestroy();
         }
     }
 

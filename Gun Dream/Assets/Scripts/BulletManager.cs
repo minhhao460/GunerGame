@@ -12,7 +12,7 @@ public class BulletManager : MonoBehaviour
     // Fire
     public static Color color_Lua = Color.red;
     public static float Lua = 0.4f;
-    public static float Timedelay_Lua = 0.2f;
+    public static float Timedelay_Lua = 0.5f;
     public static float dama_everyTime_Lua = 0.05f;
     public static float TiLe_Lua = 0.3f;
 

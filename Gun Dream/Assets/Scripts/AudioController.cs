@@ -36,6 +36,4 @@ public class AudioController : MonoBehaviour
             Debug.LogWarning("Audio ko được tìm thấy: Mã code: " + codeAudio[code] + ".");
         }
     }
-
-    
 }

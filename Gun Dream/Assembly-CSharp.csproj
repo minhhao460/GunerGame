@@ -91,6 +91,10 @@
     <Compile Include="Assets\Scripts\GetPointInSquare.cs" />
     <Compile Include="Assets\Scripts\GetPointIncircle.cs" />
     <Compile Include="Assets\Scripts\Gun\Ak47_Shooter.cs" />
+    <Compile Include="Assets\Scripts\Gun\LucAnhSang_Shooter.cs" />
+    <Compile Include="Assets\Scripts\Gun\LucBang_Shooter.cs" />
+    <Compile Include="Assets\Scripts\Gun\LucDoc_Shooter.cs" />
+    <Compile Include="Assets\Scripts\Gun\LucLua_Shooter.cs" />
     <Compile Include="Assets\Scripts\GunController.cs" />
     <Compile Include="Assets\Scripts\GunManager.cs" />
     <Compile Include="Assets\Scripts\HienThiThongTInSung.cs" />

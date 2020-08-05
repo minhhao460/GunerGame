@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class Shooter : MonoBehaviour
@@ -12,6 +11,20 @@ public class Shooter : MonoBehaviour
     public GunManager.TypeSung LoaiSung;
     public BulletManager.TypeDan LoaiDan;
     public VienDan[] viendan;
+
+    public SpawnQ SpawnSung;
+    public CodeQ Code;
+    [Serializable]
+    public class SpawnQ
+    {
+        public Vector3 localScale = Vector3.one;
+    }
+    [Serializable]
+    public class CodeQ
+    {
+        public string codeAudioShoot;
+        public string codeEffectShoot;
+    }
     private GameObject player;
     private float m_BanLanCuoi_Time;
     private DieuKhien dk;
@@ -31,6 +44,7 @@ public class Shooter : MonoBehaviour
             return;
         }
         PlayAudioShoot();
+        ShowEffectShoot();
         Vector3 a;
         if (FindEnemy.Instance.HaveEnemy())
         {
@@ -45,9 +59,9 @@ public class Shooter : MonoBehaviour
         {
             giat /= 2;
         }
-        a.y = a.y + Random.Range(-giat, giat);
-        a.x = a.x + Random.Range(-giat, giat);
-        VienDan dan = Instantiate(viendan[Random.Range(0, viendan.Length)], spawnDan.transform.position, Quaternion.Euler(a)) as VienDan;
+        a.y = a.y + UnityEngine.Random.Range(-giat, giat);
+        a.x = a.x + UnityEngine.Random.Range(-giat, giat);
+        VienDan dan = Instantiate(viendan[UnityEngine.Random.Range(0, viendan.Length)], spawnDan.transform.position, Quaternion.Euler(a)) as VienDan;
         dan.setSpeed(TocDoBay);
         dan.setDamage(Damage);
         m_BanLanCuoi_Time = Time.time;
@@ -55,8 +69,11 @@ public class Shooter : MonoBehaviour
 
     protected virtual void PlayAudioShoot()
     {
-        AudioController.Instance.PlayAudio("SungLuc");
+        AudioController.Instance.PlayAudio(Code.codeAudioShoot);
     }
 
-
+    protected virtual void ShowEffectShoot()
+    {
+        EffectIsHere.Instance.SpawnEffect(EffectIsHere.Instance.getEffect(Code.codeEffectShoot), spawnDan.transform, true, 0.2f);
+    }
 }

@@ -230,8 +230,7 @@ public class Enemy : LivingOB
         }
         if (!(damage_Lua > 0))
         {
-            ResetAllEffect();
-            Ecf_Fire = Instantiate(EffectIsHere.Instance.Fire, posSpawnEffect.transform);
+            Ecf_Fire = Instantiate(EffectIsHere.Instance.getEffect("Fire"), posSpawnEffect.transform);
         }
         damage_Lua = TakeHitAfterResist(BulletManager.Lua, shield_Lua);
         damageDes_Lua = TakeHitAfterResist(BulletManager.dama_everyTime_Lua, shield_Lua);
@@ -247,8 +246,7 @@ public class Enemy : LivingOB
         }
         if (!(damage_Doc > 0))
         {
-            ResetAllEffect();
-            Ecf_Poison = Instantiate(EffectIsHere.Instance.Poision, posSpawnEffect.transform);
+            Ecf_Poison = Instantiate(EffectIsHere.Instance.getEffect("Poision"), posSpawnEffect.transform);
         }
         damage_Doc = TakeHitAfterResist(BulletManager.Doc, shield_Doc);
         damageDes_Doc = TakeHitAfterResist(BulletManager.dama_everyTime_Doc, shield_Doc);
@@ -266,8 +264,7 @@ public class Enemy : LivingOB
         }
         if (!(time_Choang > 0))
         {
-            ResetAllEffect();
-            Ecf_Stun = Instantiate(EffectIsHere.Instance.Stun, posSpawnEffect.transform);
+            Ecf_Stun = Instantiate(EffectIsHere.Instance.getEffect("Stun"), posSpawnEffect.transform);
         }
         time_Choang = TakeTimeAfterResist(BulletManager.Time_Choang, shield_Choang);
     }
@@ -290,7 +287,7 @@ public class Enemy : LivingOB
         }
         if (!(time_bang > 0))
         {
-            Ecf_Freeze = Instantiate(EffectIsHere.Instance.Freeze, posSpawnEffect.transform);
+            Ecf_Freeze = Instantiate(EffectIsHere.Instance.getEffect("Freeze"), posSpawnEffect.transform);
         }
         time_bang = TakeTimeAfterResist(BulletManager.Time_Bang, shield_Bang);
     }
@@ -355,26 +352,26 @@ public class Enemy : LivingOB
             case 1:
                 typeElement = TypeElementEnemy.Stun;
                 shield_Choang = Mathf.Min(shield_Choang + 0.5f, 0.9f);
-                Health_Color = EffectIsHere.Instance.Health_Color_Stun;
+                Health_Color = EffectIsHere.Instance.getHealthColor("Yellow");
                 break;
             case 2:
                 typeElement = TypeElementEnemy.Fire;
                 shield_Lua = Mathf.Min(shield_Lua + 0.5f, 0.9f);
-                Health_Color = EffectIsHere.Instance.Health_Color_Fire;
+                Health_Color = EffectIsHere.Instance.getHealthColor("Red");
                 break;
             case 3:
                 typeElement = TypeElementEnemy.Poision;
                 shield_Doc = Mathf.Min(shield_Doc + 0.5f, 0.9f);
-                Health_Color = EffectIsHere.Instance.Health_Color_Poision;
+                Health_Color = EffectIsHere.Instance.getHealthColor("Green");
                 break;
             case 4:
                 typeElement = TypeElementEnemy.Freeze;
                 shield_Bang = Mathf.Min(shield_Bang + 0.5f, 0.9f);
-                Health_Color = EffectIsHere.Instance.Health_Color_Freeze;
+                Health_Color = EffectIsHere.Instance.getHealthColor("Blue");
                 break;
             default:
                 typeElement = TypeElementEnemy.None;
-                Health_Color = EffectIsHere.Instance.Health_Color_Default;
+                Health_Color = EffectIsHere.Instance.getHealthColor("Default");
                 break;
         }
     }

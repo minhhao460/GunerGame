@@ -21,7 +21,7 @@ public class HienThiThongTInSung : MonoBehaviour
     private GunController guncontroller;
     private void OnEnable()
     {
-        guncontroller = GunManager.GunFromMap.GetComponent<GunController>();
+        guncontroller = GunManager.Instance.GunFromMap.GetComponent<GunController>();
         SetStart();
     }
 

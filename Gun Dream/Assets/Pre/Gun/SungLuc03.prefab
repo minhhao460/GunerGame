@@ -39,8 +39,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1820918450918711456}
-  - component: {fileID: 9028055049261651685}
   - component: {fileID: 785057162124791971}
+  - component: {fileID: 3027624067700513436}
   m_Layer: 0
   m_Name: SungLuc03
   m_TagString: Untagged
@@ -64,30 +64,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9028055049261651685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3186838466973416661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a0c602cdd6edd14ba2f22e0860ac6fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doGiat: 5
-  Damage: 20
-  TocDoBay: 100
-  spawnDan: {fileID: 897038535202302233}
-  TocDoBan: 3
-  LoaiSung: 1
-  LoaiDan: 3
-  viendan:
-  - {fileID: 6099369846395906127, guid: 5cfd5ad414448754f8fff752075dea45, type: 3}
-  - {fileID: 6099369846395906127, guid: 5cfd5ad414448754f8fff752075dea45, type: 3}
-  - {fileID: 6099369846395906127, guid: 5cfd5ad414448754f8fff752075dea45, type: 3}
-  - {fileID: 6099369846395906127, guid: 5cfd5ad414448754f8fff752075dea45, type: 3}
 --- !u!114 &785057162124791971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +79,32 @@ MonoBehaviour:
   HinhAnh: {fileID: 21300000, guid: 4893a4f414dce134db780ca13b7b5819, type: 3}
   colorhe: {r: 0.28960717, g: 1, b: 0, a: 1}
   fixedcolorhe: {r: 0.7555547, g: 0, b: 1, a: 0.39215687}
+--- !u!114 &3027624067700513436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186838466973416661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c26b9dd170ae744be5d5340c1e0794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doGiat: 5
+  Damage: 20
+  TocDoBay: 100
+  spawnDan: {fileID: 897038535202302233}
+  TocDoBan: 3
+  LoaiSung: 1
+  LoaiDan: 3
+  viendan:
+  - {fileID: 6099369846395906127, guid: 5cfd5ad414448754f8fff752075dea45, type: 3}
+  SpawnSung:
+    localScale: {x: 200, y: 200, z: 200}
+  Code:
+    codeAudioShoot: SungLuc
+    codeEffectShoot: Shoot_LucDoc
 --- !u!1001 &1722074568666025295
 PrefabInstance:
   m_ObjectHideFlags: 0

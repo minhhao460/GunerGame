@@ -49,8 +49,10 @@ public class PlayerController : LivingOB
         if (other.tag == "GetSung")
         {
             CVDK.Instance.GetSungButton.SetActive(true);
-            GunManager.GunFromMap = other.GetComponentInParent<GetGunFromMap>().ThisGun;
-            GunManager.TypeGunFromMap = other.GetComponentInParent<GetGunFromMap>().TypeSung;
+            GetGunFromMap a = other.GetComponentInParent<GetGunFromMap>();
+            GunManager.Instance.GunFromMap = a.ThisGun;
+            GunManager.Instance.TypeGunFromMap = a.TypeSung;
+            GunManager.Instance.SpawnGunFromMap = a;
         }
     }
 
@@ -59,8 +61,9 @@ public class PlayerController : LivingOB
         if (other.tag == "GetSung")
         {
             CVDK.Instance.GetSungButton.SetActive(false);
-            GunManager.GunFromMap = null;
-            GunManager.TypeGunFromMap = other.GetComponentInParent<GetGunFromMap>().TypeSung;
+            GunManager.Instance.GunFromMap = null;
+            GunManager.Instance.TypeGunFromMap = GunManager.TypeSung.None;
+            GunManager.Instance.SpawnGunFromMap = null;
         }
     }
 
