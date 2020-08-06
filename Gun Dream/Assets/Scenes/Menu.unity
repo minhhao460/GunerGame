@@ -278,38 +278,45 @@ MonoBehaviour:
     type: 3}
   GunSpawner: {fileID: 3908636649234198451, guid: 2c23c0afc0814ea48bf8b86824bd6423,
     type: 3}
-  Effect:
-  - {fileID: 4591109392299968796, guid: bb542767a10c53f45b1f355a930270ab, type: 3}
-  - {fileID: 4591109392299968796, guid: 35e51af7d094d4947b7aac497435e5a5, type: 3}
-  - {fileID: 4591109392299968796, guid: df3584252f3e0cc4ca32c6e71023456b, type: 3}
-  - {fileID: 4591109392299968796, guid: fd871f7b2740bc4479eb0ec66347f4a7, type: 3}
-  - {fileID: 5865702589572827169, guid: 623ecff1ff99866408fbb98a760f6858, type: 3}
-  - {fileID: 5865702589572827169, guid: afa452186746be5489cab1ff315d1826, type: 3}
-  - {fileID: 5865702589572827169, guid: c670793509532c34a99674a143b74438, type: 3}
-  - {fileID: 5865702589572827169, guid: cc693c363872ca44389b7b871a88361a, type: 3}
-  - {fileID: 5865702589572827169, guid: 1ef5f7bf848e6d3409e88bc71cd3eea9, type: 3}
-  codeEF:
-  - Fire
-  - Freeze
-  - Poision
-  - Stun
-  - Shoot_LucAnhSang
-  - Shoot_LucBang
-  - Shoot_LucDoc
-  - Shoot_LucLua
-  - Shoot_AK47
-  HealthColor:
-  - {r: 0.8207547, g: 0.56910825, b: 0.8033668, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.9975273, b: 0, a: 1}
-  - {r: 0, g: 0.559567, b: 1, a: 1}
-  - {r: 0.08276451, g: 1, b: 0, a: 1}
-  codeHealthColor:
-  - Default
-  - Red
-  - Yellow
-  - Blue
-  - Green
+  effect:
+  - code: Fire
+    effect: {fileID: 4591109392299968796, guid: bb542767a10c53f45b1f355a930270ab,
+      type: 3}
+  - code: Freeze
+    effect: {fileID: 4591109392299968796, guid: 35e51af7d094d4947b7aac497435e5a5,
+      type: 3}
+  - code: Poision
+    effect: {fileID: 4591109392299968796, guid: df3584252f3e0cc4ca32c6e71023456b,
+      type: 3}
+  - code: Stun
+    effect: {fileID: 4591109392299968796, guid: fd871f7b2740bc4479eb0ec66347f4a7,
+      type: 3}
+  - code: Shoot_LucAnhSang
+    effect: {fileID: 5865702589572827169, guid: 623ecff1ff99866408fbb98a760f6858,
+      type: 3}
+  - code: Shoot_LucBang
+    effect: {fileID: 5865702589572827169, guid: afa452186746be5489cab1ff315d1826,
+      type: 3}
+  - code: Shoot_LucDoc
+    effect: {fileID: 5865702589572827169, guid: c670793509532c34a99674a143b74438,
+      type: 3}
+  - code: Shoot_LucLua
+    effect: {fileID: 5865702589572827169, guid: cc693c363872ca44389b7b871a88361a,
+      type: 3}
+  - code: Shoot_AK47
+    effect: {fileID: 5865702589572827169, guid: 1ef5f7bf848e6d3409e88bc71cd3eea9,
+      type: 3}
+  colorOfHealth:
+  - code: Default
+    color: {r: 0.9056604, g: 0.6792453, b: 0.9056604, a: 1}
+  - code: Red
+    color: {r: 1, g: 0, b: 0, a: 1}
+  - code: Yellow
+    color: {r: 1, g: 1, b: 0, a: 1}
+  - code: Blue
+    color: {r: 0, g: 0, b: 1, a: 1}
+  - code: Green
+    color: {r: 0, g: 1, b: 0, a: 1}
 --- !u!4 &158712700
 Transform:
   m_ObjectHideFlags: 0
@@ -633,6 +640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d863e05aff2784345b85c88e7221ec9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxDamage: 100
+  MaxAS: 10
   SungLuc:
   - {fileID: 3186838466973416661, guid: 9d903b413bfeb8e4da31efd26f844794, type: 3}
   - {fileID: 3186838466973416661, guid: 44d9fc8c509149a44acaa33d17033013, type: 3}
@@ -3666,13 +3675,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Audio_Shoot:
-  - {fileID: 653097314}
-  - {fileID: 1884064112}
-  - {fileID: 1448999769}
-  codeAudio:
-  - ThaySung
-  - SungLuc
-  - Shoot_AK47
+  - codeAudio: ThaySung
+    Source: {fileID: 653097314}
+  - codeAudio: SungLuc
+    Source: {fileID: 1884064112}
+  - codeAudio: Shoot_AK47
+    Source: {fileID: 1448999769}
 --- !u!4 &1977696139
 Transform:
   m_ObjectHideFlags: 0
@@ -3836,22 +3844,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed7d167546c8f9c4981993b028e630df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SungLuc_InfoChoang: "H\u1EC7 \xC1nh S\xE1ng: M\u1EE5c ti\xEAu c\xF3 th\u1EC3 b\u1ECB
-    cho\xE1ng khi b\u1ECB b\u1EAFn."
-  SungLuc_InfoLua: "H\u1EC7 L\u1EEDa: M\u1EE5c ti\xEAu c\xF3 th\u1EC3 b\u1ECB thi\xEAu
-    \u0111\u1ED1t khi b\u1ECB b\u1EAFn."
-  SungLuc_InfoDoc: "H\u1EC7 \u0110\u1ED9c: M\u1EE5c ti\xEAu c\xF3 th\u1EC3 b\u1ECB
-    nhi\u1EC5m \u0111\u1ED9c khi b\u1ECB b\u1EAFn."
-  SungLuc_InfoBang: "H\u1EC7 B\u0103ng: M\u1EE5c ti\xEAu s\u1EBD b\u1ECB l\xE0m ch\u1EADm
-    khi b\u1ECB b\u1EAFn."
-  InfoNone: "Kh\xF4ng s\u1EDF h\u1EEFu h\u1EC7 n\xE0o c\u1EA3."
-  SungLuc_Name_Doc: "L\u1EE5c \u0110\u1ED9c"
-  SungLuc_Name_Choang: "L\u1EE5c \xC1nh S\xE1ng"
-  SungLuc_Name_Lua: "L\u1EE5c L\u1EEDa"
-  "SungLuc_Name_B\u0103ng": "L\u1EE5c B\u0103ng"
-  SungLuc_Info: "M\u1ED9t c\xE2y s\xFAng l\u1EE5c b\xECnh th\u01B0\u1EDDng"
-  SungTr_AK47_Info: "M\u1ED9t lo\u1EA1i s\xFAng m\xE1y m\u1EA1nh m\u1EBD"
-  SungTr_AK47_Name: AK-47
+  nameOfGun: 000000000100000002000000030000000400000005000000
+  he: 0000000001000000020000000300000004000000
 --- !u!1 &2127145994
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,17 +3927,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 231449198921833887, guid: 516cd8587cddf41428ebc75edc10075b,
-        type: 3}
-      propertyPath: GunStart.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 231449198921833887, guid: 516cd8587cddf41428ebc75edc10075b,
-        type: 3}
-      propertyPath: GunStart.Array.data[4]
-      value: 
-      objectReference: {fileID: -8516463712520458126, guid: 0ad75eb803402ce4d8ebb69920985884,
-        type: 3}
     - target: {fileID: 1092044464584233520, guid: 516cd8587cddf41428ebc75edc10075b,
         type: 3}
       propertyPath: m_Name

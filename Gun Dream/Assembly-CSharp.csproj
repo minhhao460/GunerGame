@@ -95,14 +95,10 @@
     <Compile Include="Assets\Scripts\Gun\LucBang_Shooter.cs" />
     <Compile Include="Assets\Scripts\Gun\LucDoc_Shooter.cs" />
     <Compile Include="Assets\Scripts\Gun\LucLua_Shooter.cs" />
+    <Compile Include="Assets\Scripts\Gun\M4A1_Shooter.cs" />
     <Compile Include="Assets\Scripts\GunController.cs" />
     <Compile Include="Assets\Scripts\GunManager.cs" />
     <Compile Include="Assets\Scripts\HienThiThongTInSung.cs" />
-    <Compile Include="Assets\Scripts\InfoGun\AK47.cs" />
-    <Compile Include="Assets\Scripts\InfoGun\SungLuc_AnhSang.cs" />
-    <Compile Include="Assets\Scripts\InfoGun\SungLuc_Bang.cs" />
-    <Compile Include="Assets\Scripts\InfoGun\SungLuc_Doc.cs" />
-    <Compile Include="Assets\Scripts\InfoGun\SungLuc_Lua.cs" />
     <Compile Include="Assets\Scripts\Interface\ThongTInSungManager.cs" />
     <Compile Include="Assets\Scripts\JoyButton.cs" />
     <Compile Include="Assets\Scripts\LivingOB.cs" />

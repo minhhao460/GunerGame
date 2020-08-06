@@ -1,7 +1,8 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Shooter : MonoBehaviour
+public class Shooter : MonoBehaviour, ThongTInSungManager
 {
     public float doGiat;
     public int Damage;
@@ -13,18 +14,37 @@ public class Shooter : MonoBehaviour
     public VienDan[] viendan;
 
     public SpawnQ SpawnSung;
-    public CodeQ Code;
+    public AmThanhQ AmThanh;
+    public HieuHungQ HieuHung;
+    public InfoQ Info;
+
+    #region Class Of Shooter
     [Serializable]
     public class SpawnQ
     {
         public Vector3 localScale = Vector3.one;
     }
     [Serializable]
-    public class CodeQ
+    public class HieuHungQ
     {
-        public string codeAudioShoot;
         public string codeEffectShoot;
     }
+    [Serializable]
+    public class AmThanhQ
+    {
+        public string codeAudioShoot;
+    }
+    [Serializable]
+    public class InfoQ
+    {
+        public Sprite HinhAnh;
+        public Color colorif;
+        public Color colorifh;
+        public STRINGS.Name codeName;
+        public STRINGS.He codeInfoHe;
+    }
+    #endregion
+
     private GameObject player;
     private float m_BanLanCuoi_Time;
     private DieuKhien dk;
@@ -69,11 +89,51 @@ public class Shooter : MonoBehaviour
 
     protected virtual void PlayAudioShoot()
     {
-        AudioController.Instance.PlayAudio(Code.codeAudioShoot);
+        AudioController.Instance.PlayAudio(AmThanh.codeAudioShoot);
     }
 
     protected virtual void ShowEffectShoot()
     {
-        EffectIsHere.Instance.SpawnEffect(EffectIsHere.Instance.getEffect(Code.codeEffectShoot), spawnDan.transform, true, 0.2f);
+        EffectIsHere.Instance.SpawnEffect(EffectIsHere.Instance.getEffect(HieuHung.codeEffectShoot), spawnDan.transform, true, 0.2f);
+    }
+
+    public string getName()
+    {
+        return STRINGS.Instance.getNameOfGun(Info.codeName);
+    }
+
+    public float getDamage()
+    {
+        return Damage;
+    }
+
+    public float getAS()
+    {
+        return TocDoBan;
+    }
+
+    public string getInfo()
+    {
+        return STRINGS.Instance.getInfoOfGun(Info.codeName);
+    }
+
+    public string getInfoHe()
+    {
+        return STRINGS.Instance.getHeOfGun(Info.codeInfoHe);
+    }
+
+    public Sprite getImage()
+    {
+        return Info.HinhAnh;
+    }
+
+    public Color getColorHe()
+    {
+        return Info.colorif;
+    }
+
+    public Color getFixedColorHe()
+    {
+        return Info.colorifh;
     }
 }

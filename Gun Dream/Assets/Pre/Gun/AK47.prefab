@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 734451381135707359}
-  - component: {fileID: 4864852454164876934}
   - component: {fileID: -8516463712520458126}
   m_Layer: 0
   m_Name: AK47
@@ -27,27 +26,12 @@ Transform:
   m_GameObject: {fileID: 734451381135707356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 5713941397993805626}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4864852454164876934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 734451381135707356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b1c6e05a18af624e87cc6d2e1dcd6a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HinhAnh: {fileID: 21300000, guid: c1619168d76fbab44aa20be99952a0fc, type: 3}
-  colorhe: {r: 1, g: 0.69540036, b: 0, a: 1}
-  fixedcolorhe: {r: 0, g: 0.47505808, b: 1, a: 0.4392157}
 --- !u!114 &-8516463712520458126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,9 +55,16 @@ MonoBehaviour:
   - {fileID: 6099369846395906127, guid: 03ea0477d5692fb429e56fad1fa25695, type: 3}
   SpawnSung:
     localScale: {x: 1, y: 1, z: 1}
-  Code:
+  AmThanh:
     codeAudioShoot: Shoot_AK47
+  HieuHung:
     codeEffectShoot: Shoot_AK47
+  Info:
+    HinhAnh: {fileID: 21300000, guid: c1619168d76fbab44aa20be99952a0fc, type: 3}
+    colorif: {r: 1, g: 0.7394294, b: 0, a: 1}
+    colorifh: {r: 0, g: 0.26089263, b: 1, a: 0.39215687}
+    codeName: 4
+    codeInfoHe: 0
 --- !u!1001 &1255553494702484119
 PrefabInstance:
   m_ObjectHideFlags: 0

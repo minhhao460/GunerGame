@@ -9,9 +9,9 @@ public class GunManager : MonoBehaviour
     [HideInInspector]
     public enum TypeSung { None, SungLuc, SungTruong, Shotgun, Truong};
 
-
     public static GunManager Instance { get; private set; }
-
+    public float MaxDamage = 100;
+    public float MaxAS = 10;
     public GameObject[] SungLuc;
     public HienThiThongTInSung hienthi;
 

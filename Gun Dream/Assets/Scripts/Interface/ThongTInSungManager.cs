@@ -10,6 +10,6 @@ public interface ThongTInSungManager
     string getInfo();
     string getInfoHe();
     Sprite getImage();
-
     Color getColorHe();
+    Color getFixedColorHe();
 }

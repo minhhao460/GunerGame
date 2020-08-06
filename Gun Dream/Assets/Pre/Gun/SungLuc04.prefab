@@ -39,7 +39,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1820918450918711456}
-  - component: {fileID: 3574119616837675266}
   - component: {fileID: 3103657502913873080}
   m_Layer: 0
   m_Name: SungLuc04
@@ -64,21 +63,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3574119616837675266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3186838466973416661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a11663a725bac44a7e2eb4109eb7d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HinhAnh: {fileID: 21300000, guid: e2a82b265a2f059429dae442328c0b19, type: 3}
-  colorhe: {r: 0, g: 0.13310385, b: 1, a: 1}
-  fixedcolorhe: {r: 0.9732981, g: 1, b: 0, a: 0.39215687}
 --- !u!114 &3103657502913873080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,9 +86,16 @@ MonoBehaviour:
   - {fileID: 6099369846395906127, guid: 5463f3465a3a0974ca663ab9ae27b523, type: 3}
   SpawnSung:
     localScale: {x: 200, y: 200, z: 200}
-  Code:
-    codeAudioShoot: SungLuc
+  AmThanh:
+    codeAudioShoot: Shoot_LucBang
+  HieuHung:
     codeEffectShoot: Shoot_LucBang
+  Info:
+    HinhAnh: {fileID: 21300000, guid: e2a82b265a2f059429dae442328c0b19, type: 3}
+    colorif: {r: 0, g: 0, b: 1, a: 1}
+    colorifh: {r: 1, g: 0.86133146, b: 0, a: 0.39215687}
+    codeName: 3
+    codeInfoHe: 4
 --- !u!1001 &1722074568666025295
 PrefabInstance:
   m_ObjectHideFlags: 0

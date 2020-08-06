@@ -18,31 +18,31 @@ public class HienThiThongTInSung : MonoBehaviour
     public Text InfoHe;
     public Image fixecolor;
 
-    private GunController guncontroller;
+    private Shooter shooter;
     private void OnEnable()
     {
-        guncontroller = GunManager.Instance.GunFromMap.GetComponent<GunController>();
+        shooter = GunManager.Instance.GunFromMap.GetComponent<Shooter>();
         SetStart();
     }
 
     public void SetStart()
     {
-        MainImage.sprite = guncontroller.getImage();
-        MainText.text = guncontroller.getName();
+        MainImage.sprite = shooter.getImage();
+        MainText.text = shooter.getName();
         damageInamge.sprite = Imagedamage;
         ASImage.sprite = ImageAS;
 
-        SliDamage.maxValue = GunController.MaxDamage;
-        SliDamage.value = guncontroller.getDamage();
+        SliDamage.maxValue = GunManager.Instance.MaxDamage;
+        SliDamage.value = shooter.getDamage();
 
-        SliAS.maxValue = GunController.MaxAttrackSpeed;
-        SliAS.value = guncontroller.getAS();
+        SliAS.maxValue = GunManager.Instance.MaxAS;
+        SliAS.value = shooter.getAS();
 
-        Info.text = guncontroller.getInfo();
+        Info.text = shooter.getInfo();
 
-        InfoHe.text = guncontroller.getInfoHe();
-        InfoHe.color = guncontroller.getColorHe();
+        InfoHe.text = shooter.getInfoHe();
+        InfoHe.color = shooter.getColorHe();
 
-        fixecolor.color = guncontroller.getFixedColor();
+        fixecolor.color = shooter.getFixedColorHe();
     }
 }

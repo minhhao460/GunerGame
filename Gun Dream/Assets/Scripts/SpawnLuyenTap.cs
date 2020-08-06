@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class SpawnLuyenTap : MonoBehaviour
 {
     public GameObject testPlayer;
-    public GameObject Cua;
+    public GameObject[] Enemy;
     public int MaxEnemy;
     public float DoLech;
     public Transform TrungTam;
@@ -51,8 +51,7 @@ public class SpawnLuyenTap : MonoBehaviour
     {
         Vector3 pos = GetComponent<GetPointInSquare>().getPoint(0.1f);
         pos = GameController.FixedPosByNavMesh(pos);
-        Instantiate(Cua, pos, Quaternion.identity);
-
-
+        int a = Random.Range(0, Enemy.Length);
+        Instantiate(Enemy[a], pos, Quaternion.identity);
     }
 }

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class EffectIsHere : MonoBehaviour
 {
@@ -7,13 +9,24 @@ public class EffectIsHere : MonoBehaviour
     public ShowHealth ShowHealth;
     public ShowMienNhiem ShowMienNhiem;
     public GetGunFromMap GunSpawner;
-    public GameObject[] Effect;
     [SerializeField]
-    private string[] codeEF;
-    public Color[] HealthColor;
+    private Effect[] effect;
     [SerializeField]
-    private string[] codeHealthColor;
-
+    private ColorOfHealth[] colorOfHealth;
+    #region Class
+    [Serializable]
+    public class ColorOfHealth
+    {
+        public string code;
+        public Color color;
+    }
+    [Serializable]
+    public class Effect
+    {
+        public string code;
+        public GameObject effect;
+    }
+    #endregion
     private void Awake()
     {
         Instance = this;
@@ -51,9 +64,9 @@ public class EffectIsHere : MonoBehaviour
     }
     public GameObject getEffect(string code)
     {
-        for (int i = 0; i < codeEF.Length; i++)
+        for (int i = 0; i < effect.Length; i++)
         {
-            if (code == codeEF[i])
+            if (code == effect[i].code)
             {
                 return getEffect(i);
             }
@@ -63,13 +76,13 @@ public class EffectIsHere : MonoBehaviour
     }
     public GameObject getEffect(int code)
     {
-        return Effect[code];
+        return effect[code].effect;
     }
     public Color getHealthColor(string code)
     {
-        for (int i = 0; i < codeHealthColor.Length; i++)
+        for (int i = 0; i < colorOfHealth.Length; i++)
         {
-            if (code.Equals(codeHealthColor[i]))
+            if (code == colorOfHealth[i].code)
             {
                 return getHealthColor(i);
             }
@@ -79,7 +92,7 @@ public class EffectIsHere : MonoBehaviour
     }
     public Color getHealthColor(int code)
     {
-        return HealthColor[code];
+        return colorOfHealth[code].color;
     }
 
 }

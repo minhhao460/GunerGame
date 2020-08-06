@@ -231,6 +231,7 @@ MonoBehaviour:
   - {fileID: -7267329845781023311, guid: 44d9fc8c509149a44acaa33d17033013, type: 3}
   - {fileID: 3027624067700513436, guid: 6fa931356c231fc4f818ff79fa816170, type: 3}
   - {fileID: 3103657502913873080, guid: db161b7af52dea849aca724ffc0e8d2a, type: 3}
+  - {fileID: -8516463712520458126, guid: 0ad75eb803402ce4d8ebb69920985884, type: 3}
 --- !u!1 &3667910667844945973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1032,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testPlayer: {fileID: 7710159750913490269}
-  Cua: {fileID: 1131052113251789052, guid: 3a46f176e0eaaae4d8c926638a10856f, type: 3}
+  Enemy:
+  - {fileID: 1131052113251789052, guid: 3a46f176e0eaaae4d8c926638a10856f, type: 3}
+  - {fileID: 3069883555618089046, guid: e2c62e1dfca17f647a1a22213b5230ed, type: 3}
   MaxEnemy: 5
   DoLech: 30
   TrungTam: {fileID: 5800610695191425030}
