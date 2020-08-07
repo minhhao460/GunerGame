@@ -87,9 +87,11 @@ MonoBehaviour:
   SpawnSung:
     localScale: {x: 200, y: 200, z: 200}
   AmThanh:
-    codeAudioShoot: Shoot_LucAnhSang
+    AudioShoot: {fileID: 2781245039174001534, guid: 00e970e5305d81447a1caa020f4dd4e7,
+      type: 3}
   HieuHung:
-    codeEffectShoot: Shoot_LucAnhSang
+    codeEffectShoot: {fileID: 5865702589572827169, guid: 623ecff1ff99866408fbb98a760f6858,
+      type: 3}
   Info:
     HinhAnh: {fileID: 21300000, guid: f2b87cdb98794d94bb0bcbd1cee9daf3, type: 3}
     colorif: {r: 1, g: 1, b: 0, a: 1}

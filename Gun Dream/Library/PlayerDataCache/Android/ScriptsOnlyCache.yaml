@@ -1,7 +1,6 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - AK47
     - Ak47_Shooter
     - AudioController
     - BuildMap1
@@ -11,6 +10,7 @@ ScriptsOnlyBuild:
     - CameraMain
     - DieuKhien
     - EffectIsHere
+    - Enemy_BoCap
     - Enemy_Cua
     - FindEnemy
     - FloatingJoystick
@@ -26,6 +26,7 @@ ScriptsOnlyBuild:
     - LucBang_Shooter
     - LucDoc_Shooter
     - LucLua_Shooter
+    - M4A1_Shooter
     - MenuMapGame
     - MyPoint
     - PlayerController
@@ -35,10 +36,6 @@ ScriptsOnlyBuild:
     - ShowMienNhiem
     - SpawnAfterIn
     - SpawnLuyenTap
-    - SungLuc_AnhSang
-    - SungLuc_Bang
-    - SungLuc_Doc
-    - SungLuc_Lua
     - VienDan
     Unity.RenderPipelines.Core.Runtime.dll:
     - UnityEngine.Rendering.UI.DebugUIHandlerBitField
@@ -132,11 +129,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11414}
     - Class: 114
-      Script: {instanceID: 12624}
+      Script: {instanceID: 12620}
     - Class: 114
-      Script: {instanceID: 13968}
+      Script: {instanceID: 13958}
     - Class: 114
-      Script: {instanceID: 15240}
+      Script: {instanceID: 15234}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -231,121 +228,117 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12144}
     - Class: 114
-      Script: {instanceID: 12146}
+      Script: {instanceID: 12386}
     - Class: 114
-      Script: {instanceID: 12222}
+      Script: {instanceID: 12430}
     - Class: 114
-      Script: {instanceID: 12390}
+      Script: {instanceID: 12494}
     - Class: 114
-      Script: {instanceID: 12434}
+      Script: {instanceID: 12620}
     - Class: 114
-      Script: {instanceID: 12498}
+      Script: {instanceID: 12720}
     - Class: 114
-      Script: {instanceID: 12624}
+      Script: {instanceID: 12734}
     - Class: 114
-      Script: {instanceID: 12726}
+      Script: {instanceID: 12762}
     - Class: 114
-      Script: {instanceID: 12740}
+      Script: {instanceID: 12852}
     - Class: 114
-      Script: {instanceID: 12748}
+      Script: {instanceID: 12950}
     - Class: 114
-      Script: {instanceID: 12770}
+      Script: {instanceID: 12952}
     - Class: 114
-      Script: {instanceID: 12860}
+      Script: {instanceID: 12962}
     - Class: 114
-      Script: {instanceID: 12958}
+      Script: {instanceID: 12974}
     - Class: 114
-      Script: {instanceID: 12960}
-    - Class: 114
-      Script: {instanceID: 12970}
-    - Class: 114
-      Script: {instanceID: 12982}
+      Script: {instanceID: 13014}
     - Class: 114
       Script: {instanceID: 13022}
     - Class: 114
-      Script: {instanceID: 13030}
+      Script: {instanceID: 13076}
     - Class: 114
-      Script: {instanceID: 13084}
+      Script: {instanceID: 13104}
     - Class: 114
-      Script: {instanceID: 13112}
+      Script: {instanceID: 13130}
     - Class: 114
-      Script: {instanceID: 13138}
+      Script: {instanceID: 13190}
     - Class: 114
-      Script: {instanceID: 13198}
+      Script: {instanceID: 13318}
     - Class: 114
-      Script: {instanceID: 13326}
+      Script: {instanceID: 13388}
     - Class: 114
-      Script: {instanceID: 13396}
+      Script: {instanceID: 13484}
     - Class: 114
-      Script: {instanceID: 13492}
+      Script: {instanceID: 13500}
     - Class: 114
-      Script: {instanceID: 13508}
+      Script: {instanceID: 13512}
     - Class: 114
-      Script: {instanceID: 13520}
+      Script: {instanceID: 13570}
     - Class: 114
-      Script: {instanceID: 13578}
+      Script: {instanceID: 13652}
     - Class: 114
-      Script: {instanceID: 13622}
+      Script: {instanceID: 13752}
     - Class: 114
-      Script: {instanceID: 13662}
+      Script: {instanceID: 13824}
     - Class: 114
-      Script: {instanceID: 13762}
+      Script: {instanceID: 13892}
     - Class: 114
-      Script: {instanceID: 13834}
+      Script: {instanceID: 13898}
     - Class: 114
-      Script: {instanceID: 13908}
+      Script: {instanceID: 13918}
     - Class: 114
-      Script: {instanceID: 13928}
+      Script: {instanceID: 13924}
     - Class: 114
-      Script: {instanceID: 13934}
+      Script: {instanceID: 13958}
     - Class: 114
-      Script: {instanceID: 13968}
+      Script: {instanceID: 14058}
     - Class: 114
-      Script: {instanceID: 14068}
+      Script: {instanceID: 14092}
     - Class: 114
       Script: {instanceID: 14102}
     - Class: 114
-      Script: {instanceID: 14112}
+      Script: {instanceID: 14136}
     - Class: 114
-      Script: {instanceID: 14146}
+      Script: {instanceID: 14424}
     - Class: 114
-      Script: {instanceID: 14434}
+      Script: {instanceID: 14440}
     - Class: 114
-      Script: {instanceID: 14450}
+      Script: {instanceID: 14474}
     - Class: 114
-      Script: {instanceID: 14504}
+      Script: {instanceID: 14496}
     - Class: 114
-      Script: {instanceID: 14744}
+      Script: {instanceID: 14736}
     - Class: 114
-      Script: {instanceID: 14936}
+      Script: {instanceID: 14756}
     - Class: 114
-      Script: {instanceID: 14948}
+      Script: {instanceID: 14930}
     - Class: 114
-      Script: {instanceID: 14984}
+      Script: {instanceID: 14942}
     - Class: 114
-      Script: {instanceID: 15054}
+      Script: {instanceID: 14978}
     - Class: 114
-      Script: {instanceID: 15170}
+      Script: {instanceID: 15048}
     - Class: 114
-      Script: {instanceID: 15206}
+      Script: {instanceID: 15164}
     - Class: 114
-      Script: {instanceID: 15208}
+      Script: {instanceID: 15200}
     - Class: 114
-      Script: {instanceID: 15238}
+      Script: {instanceID: 15202}
     - Class: 114
-      Script: {instanceID: 15240}
+      Script: {instanceID: 15232}
     - Class: 114
-      Script: {instanceID: 15266}
+      Script: {instanceID: 15234}
     - Class: 114
-      Script: {instanceID: 15268}
+      Script: {instanceID: 15260}
     - Class: 114
-      Script: {instanceID: 15302}
+      Script: {instanceID: 15262}
+    - Class: 114
+      Script: {instanceID: 15296}
+    - Class: 114
+      Script: {instanceID: 15388}
     - Class: 114
       Script: {instanceID: 15394}
-    - Class: 114
-      Script: {instanceID: 15400}
-    - Class: 114
-      Script: {instanceID: 56946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -427,7 +420,7 @@ ScriptsOnlyBuild:
     className: BuildMap1
   - hash:
       serializedVersion: 2
-      Hash: 04f5acb7282e270cf0b1282c2155262f
+      Hash: 38b03b48491b2f47efaeaf44bc507655
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LucLua_Shooter
@@ -463,7 +456,7 @@ ScriptsOnlyBuild:
     className: GetPoint
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 3bb64f4af731552357042ca7db2594bc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuMapGame
@@ -643,7 +636,7 @@ ScriptsOnlyBuild:
     className: ShowHealth
   - hash:
       serializedVersion: 2
-      Hash: 04f5acb7282e270cf0b1282c2155262f
+      Hash: 38b03b48491b2f47efaeaf44bc507655
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LucBang_Shooter
@@ -697,12 +690,6 @@ ScriptsOnlyBuild:
     className: FloatingText
   - hash:
       serializedVersion: 2
-      Hash: e9083d21a293ec0c0675b57e131b4704
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SungLuc_Lua
-  - hash:
-      serializedVersion: 2
       Hash: 9e27f44bbf48228f203a37254d40f8ae
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -731,12 +718,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering
     className: CameraSwitcher
-  - hash:
-      serializedVersion: 2
-      Hash: e9083d21a293ec0c0675b57e131b4704
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SungLuc_Bang
   - hash:
       serializedVersion: 2
       Hash: bdb2aa563ff34cd96dfe8e46b3382012
@@ -811,12 +792,6 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: e9083d21a293ec0c0675b57e131b4704
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AK47
-  - hash:
-      serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -847,19 +822,13 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerToggle
   - hash:
       serializedVersion: 2
-      Hash: e9083d21a293ec0c0675b57e131b4704
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SungLuc_Doc
-  - hash:
-      serializedVersion: 2
-      Hash: 4a6a1b3c22d305a6039a9f1f900b2cc9
+      Hash: c6b666733a3a596d4b2cc6cf1596026b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: STRINGS
   - hash:
       serializedVersion: 2
-      Hash: 04f5acb7282e270cf0b1282c2155262f
+      Hash: 38b03b48491b2f47efaeaf44bc507655
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Ak47_Shooter
@@ -895,7 +864,7 @@ ScriptsOnlyBuild:
     className: LivingOB
   - hash:
       serializedVersion: 2
-      Hash: eb8277ad5300ebc33c1b79d5da3339fb
+      Hash: e22b20d746194cd8cd601ab2a48c1935
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpawnLuyenTap
@@ -949,7 +918,7 @@ ScriptsOnlyBuild:
     className: GetPointInRectangle
   - hash:
       serializedVersion: 2
-      Hash: d81dbccbed665c1a785114240bee89b4
+      Hash: 80e0eb4bfaf81464a36353547d57a069
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EffectIsHere
@@ -1039,7 +1008,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 04f5acb7282e270cf0b1282c2155262f
+      Hash: 38b03b48491b2f47efaeaf44bc507655
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LucAnhSang_Shooter
@@ -1075,16 +1044,10 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerWidget
   - hash:
       serializedVersion: 2
-      Hash: ac9a2c542ee27e7c7ffde8e0ec3667e1
+      Hash: c42434d4e8bf46c31785122c9611ec07
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GetGunFromMap
-  - hash:
-      serializedVersion: 2
-      Hash: e9083d21a293ec0c0675b57e131b4704
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SungLuc_AnhSang
   - hash:
       serializedVersion: 2
       Hash: f050e4ebd311386367bb1906f9218b01
@@ -1159,7 +1122,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerColor
   - hash:
       serializedVersion: 2
-      Hash: 5b91461637a5db113df20cade62edea0
+      Hash: f388d4d38059dccf2ce288f48147a194
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GunManager
@@ -1225,12 +1188,6 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
-      Hash: e9083d21a293ec0c0675b57e131b4704
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GunController
-  - hash:
-      serializedVersion: 2
       Hash: df819f0bc77c8d047eca1df91bbaa90d
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering.UI
@@ -1285,7 +1242,7 @@ ScriptsOnlyBuild:
     className: ColorAdjustments
   - hash:
       serializedVersion: 2
-      Hash: 04f5acb7282e270cf0b1282c2155262f
+      Hash: 38b03b48491b2f47efaeaf44bc507655
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Shooter
@@ -1313,6 +1270,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: JoystickPlayerExample
+  - hash:
+      serializedVersion: 2
+      Hash: 38b03b48491b2f47efaeaf44bc507655
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: M4A1_Shooter
   - hash:
       serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
@@ -1363,6 +1326,12 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerUIntField
   - hash:
       serializedVersion: 2
+      Hash: 38b03b48491b2f47efaeaf44bc507655
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LucDoc_Shooter
+  - hash:
+      serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1387,7 +1356,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerEnumHistory
   - hash:
       serializedVersion: 2
-      Hash: 39bf3430b085f3ab54848fbad19e877b
+      Hash: c265724c76b810e428b6dfe1e1fe9b1d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AudioController
@@ -1603,16 +1572,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 04f5acb7282e270cf0b1282c2155262f
+      Hash: 38b03b48491b2f47efaeaf44bc507655
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SungLuc
-  - hash:
-      serializedVersion: 2
-      Hash: 04f5acb7282e270cf0b1282c2155262f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LucDoc_Shooter
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity

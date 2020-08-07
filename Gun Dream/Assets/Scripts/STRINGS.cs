@@ -101,7 +101,7 @@ public class STRINGS : MonoBehaviour
         infoOfGunQ[2] = "Một cây súng lục bình thường";
         infoOfGunQ[3] = "Một cây súng lục bình thường";
         infoOfGunQ[4] = "Một loại súng máy mạnh mẽ";
-        infoOfGunQ[5] = "M4A1 là nổi khiếp sợ của rất nhiều quái vật";
+        infoOfGunQ[5] = "Là nổi khiếp sợ của rất nhiều quái vật vì độ chính xác cao";
 
         heQ[0] = "Không sở hữu hệ nào cả.";
         heQ[1] = "Hệ Ánh Sáng: Mục tiêu có thể bị choáng khi trúng đạn.";

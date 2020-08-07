@@ -56,9 +56,11 @@ MonoBehaviour:
   SpawnSung:
     localScale: {x: 1, y: 1, z: 1}
   AmThanh:
-    codeAudioShoot: Shoot_AK47
+    AudioShoot: {fileID: 68207070500582551, guid: 5556fe1cf011eed4dbbed6f388e05ca6,
+      type: 3}
   HieuHung:
-    codeEffectShoot: Shoot_AK47
+    codeEffectShoot: {fileID: 5865702589572827169, guid: 1ef5f7bf848e6d3409e88bc71cd3eea9,
+      type: 3}
   Info:
     HinhAnh: {fileID: 21300000, guid: c1619168d76fbab44aa20be99952a0fc, type: 3}
     colorif: {r: 1, g: 0.7394294, b: 0, a: 1}

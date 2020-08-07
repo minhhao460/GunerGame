@@ -10,16 +10,13 @@ public class VienDan : MonoBehaviour
     public GameObject TargetDestroy;
     public BulletManager.TypeDan Type;
     public GameObject No;
+    public Transform DiemCham;
 
     private int damage;
     private float speed;
-    private Shooter shooter;
-    private DieuKhien dk;
 
     void Start()
     {
-        dk = FindObjectOfType<DieuKhien>();
-        shooter = PlayerManager.Instance.Player.GetComponent<PlayerController>().SungHienTai.GetComponent<Shooter>();
         Destroy(TargetDestroy, TimeToDestroy);
     }
 
@@ -48,12 +45,17 @@ public class VienDan : MonoBehaviour
 
     void CheckColiisions(float moveDistance)
     {
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray1 = new Ray(transform.position, transform.forward);
+        Ray ray2 = new Ray(DiemCham.position, transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, moveDistance, DoiTuong))
+        if (Physics.Raycast(ray1, out hit, moveDistance, DoiTuong))
+        {
+            OnHitEnemy(hit);
+        } else if (DiemCham != null && Physics.Raycast(ray2, out hit, moveDistance, DoiTuong))
         {
             OnHitEnemy(hit);
         }
+
     }
 
     void OnHitEnemy(RaycastHit hit)

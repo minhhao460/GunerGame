@@ -27,12 +27,12 @@ public class Shooter : MonoBehaviour, ThongTInSungManager
     [Serializable]
     public class HieuHungQ
     {
-        public string codeEffectShoot;
+        public GameObject codeEffectShoot;
     }
     [Serializable]
     public class AmThanhQ
     {
-        public string codeAudioShoot;
+        public AudioSource AudioShoot;
     }
     [Serializable]
     public class InfoQ
@@ -54,6 +54,10 @@ public class Shooter : MonoBehaviour, ThongTInSungManager
         player = PlayerManager.Instance.Player;
         dk = FindObjectOfType<DieuKhien>();
         m_BanLanCuoi_Time = Time.time;
+        if (AmThanh.AudioShoot != null)
+        {
+            AmThanh.AudioShoot = Instantiate(AmThanh.AudioShoot, gameObject.transform);
+        }
     }
     
 
@@ -89,12 +93,30 @@ public class Shooter : MonoBehaviour, ThongTInSungManager
 
     protected virtual void PlayAudioShoot()
     {
-        AudioController.Instance.PlayAudio(AmThanh.codeAudioShoot);
+        if (HieuHung.codeEffectShoot != null)
+        {
+            AmThanh.AudioShoot.Play();
+        }
+        else
+        {
+            LogW("Chưa kh báo ÂM THÁNH BẮN cho súng " + gameObject.name);
+        }
     }
 
     protected virtual void ShowEffectShoot()
     {
-        EffectIsHere.Instance.SpawnEffect(EffectIsHere.Instance.getEffect(HieuHung.codeEffectShoot), spawnDan.transform, true, 0.2f);
+        if (HieuHung.codeEffectShoot != null)
+        {
+            GameObject ef = Instantiate(HieuHung.codeEffectShoot, spawnDan.transform, false);
+            Destroy(ef, 0.2f);
+        } else
+        {
+            LogW("Chưa kh báo HIỆU ỨNG BẮN cho súng " + gameObject.name);
+        }
+    }
+    void LogW(string s)
+    {
+        Debug.LogWarning(s);
     }
 
     public string getName()

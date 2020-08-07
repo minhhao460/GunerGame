@@ -15,8 +15,11 @@ public class GunManager : MonoBehaviour
     public GameObject[] SungLuc;
     public HienThiThongTInSung hienthi;
 
+    [HideInInspector]
     public GameObject GunFromMap;
+    [HideInInspector]
     public GetGunFromMap SpawnGunFromMap;
+    [HideInInspector]
     public TypeSung TypeGunFromMap;
     private void Awake()
     {
