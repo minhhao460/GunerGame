@@ -21,7 +21,7 @@ public class LivingOB : MonoBehaviour
     protected ShowHealth showHealth;
     protected Color Health_Color;
 
-
+    protected float MaxHealth;
     protected float Health;
     protected int Mana;
     protected float MoveSpeed;
@@ -31,6 +31,7 @@ public class LivingOB : MonoBehaviour
     protected virtual void Start()
     {
         Health = StartHealth;
+        MaxHealth = StartHealth;
         Mana = StartMana;
         Shield = StartShield;
         MoveSpeed = MoveSpeedStart;
@@ -76,7 +77,7 @@ public class LivingOB : MonoBehaviour
 
     protected virtual void ShowHealth() {
         showHealth = Instantiate(EffectIsHere.Instance.ShowHealth, PosShowHealth) as ShowHealth;
-        showHealth.SetAll(StartHealth, Health, Health_Color);
+        showHealth.SetAll(MaxHealth, Health, Health_Color);
     }
     void DesTroyThis()
     {

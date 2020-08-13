@@ -81,7 +81,6 @@ MonoBehaviour:
   spawnDan: {fileID: 897038535202302233}
   TocDoBan: 2.5
   LoaiSung: 1
-  LoaiDan: 4
   viendan:
   - {fileID: 6099369846395906127, guid: 5463f3465a3a0974ca663ab9ae27b523, type: 3}
   SpawnSung:

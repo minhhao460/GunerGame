@@ -45,16 +45,21 @@ public class VienDan : MonoBehaviour
 
     void CheckColiisions(float moveDistance)
     {
-        Ray ray1 = new Ray(transform.position, transform.forward);
-        Ray ray2 = new Ray(DiemCham.position, transform.forward);
+        Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray1, out hit, moveDistance, DoiTuong))
+        if (Physics.Raycast(ray, out hit, moveDistance, DoiTuong))
         {
             OnHitEnemy(hit);
-        } else if (DiemCham != null && Physics.Raycast(ray2, out hit, moveDistance, DoiTuong))
+        } else if (DiemCham != null)
         {
-            OnHitEnemy(hit);
+            ray = new Ray(DiemCham.position, transform.forward);
+            if (Physics.Raycast(ray, out hit, moveDistance, DoiTuong))
+            {
+                OnHitEnemy(hit);
+            }
         }
+            
+        
 
     }
 

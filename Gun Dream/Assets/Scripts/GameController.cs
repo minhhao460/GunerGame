@@ -76,5 +76,4 @@ public class GameController : MonoBehaviour
             return pos;
         }
     }
-
 }

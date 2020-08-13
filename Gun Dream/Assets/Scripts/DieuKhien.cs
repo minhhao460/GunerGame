@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DieuKhien : MonoBehaviour
 {
@@ -8,9 +7,10 @@ public class DieuKhien : MonoBehaviour
     private Vector3 velocity;
     Vector3 m_moveMent;
     Quaternion m_Rotation;
-    GameObject player;
+    PlayerController player;
     Rigidbody rig;
     Animator m_Animator;
+    bool iswalk = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +31,12 @@ public class DieuKhien : MonoBehaviour
 
 
         // Di Chuyen
-        bool iswalk = !Mathf.Approximately(hor, 0f) || !Mathf.Approximately(ver, 0f);
+        iswalk = !Mathf.Approximately(hor, 0f) || !Mathf.Approximately(ver, 0f);
         if (iswalk)
         {
             rig.isKinematic = false;
             setVelocity(m_moveMent);
-            if (FindEnemy.Instance.HaveEnemy() && player.GetComponent<PlayerController>().HaveGunInHand())
+            if (FindEnemy.Instance.HaveEnemy() && player.HaveGunInHand())
             {
                 setRotation(FindEnemy.Instance.getHuongEnemy());
             }
@@ -49,17 +49,13 @@ public class DieuKhien : MonoBehaviour
         {
             setVelocity(Vector3.zero);
             rig.isKinematic = true;
-            if (FindEnemy.Instance.HaveEnemy() && player.GetComponent<PlayerController>().HaveGunInHand())
+            if (FindEnemy.Instance.HaveEnemy() && player.HaveGunInHand())
             {
                 setRotation(FindEnemy.Instance.getHuongEnemy());
             }
         }
-        player.GetComponent<PlayerController>().setMove(iswalk);
-
-        // Kich hoat trang thai di chuyen
-        m_Animator.SetBool("isWalking", iswalk);
+        player.setAnimationMove(iswalk);
     }
-
     private void FixedUpdate()
     {
         rig.MovePosition(rig.transform.position + velocity * Time.fixedDeltaTime);
@@ -67,7 +63,7 @@ public class DieuKhien : MonoBehaviour
 
     void setVelocity(Vector3 a)
     {
-        velocity = (a * player.GetComponent<PlayerController>().getMoveSpeed());
+        velocity = (a * player.getMoveSpeed());
     }
 
     void setRotation(Vector3 a)

@@ -10,7 +10,6 @@ public class Shooter : MonoBehaviour, ThongTInSungManager
     public GameObject spawnDan;
     public float TocDoBan;
     public GunManager.TypeSung LoaiSung;
-    public BulletManager.TypeDan LoaiDan;
     public VienDan[] viendan;
 
     public SpawnQ SpawnSung;
@@ -45,9 +44,9 @@ public class Shooter : MonoBehaviour, ThongTInSungManager
     }
     #endregion
 
-    private GameObject player;
+    protected PlayerController player;
     private float m_BanLanCuoi_Time;
-    private DieuKhien dk;
+    protected DieuKhien dk;
     // Start is called before the first frame update
     private void Start()
     {
@@ -59,27 +58,31 @@ public class Shooter : MonoBehaviour, ThongTInSungManager
             AmThanh.AudioShoot = Instantiate(AmThanh.AudioShoot, gameObject.transform);
         }
     }
-    
-
-    public void Shoot()
+    public virtual void CaltoShoot()
     {
         if (Time.time - m_BanLanCuoi_Time < 1 / TocDoBan)
         {
             return;
         }
+        Shoot();
         PlayAudioShoot();
         ShowEffectShoot();
+        m_BanLanCuoi_Time = Time.time;
+    }
+    public virtual void Shoot()
+    {
         Vector3 a;
         if (FindEnemy.Instance.HaveEnemy())
         {
             Vector3 huong = (FindEnemy.Instance.getPosEnemy() - spawnDan.transform.position);
             a = Quaternion.LookRotation(huong).eulerAngles;
-        } else
+        }
+        else
         {
             a = dk.getHuong().eulerAngles;
         }
         float giat = doGiat;
-        if (!player.GetComponent<PlayerController>().IsMoving())
+        if (!player.IsMoving())
         {
             giat /= 2;
         }
@@ -88,12 +91,11 @@ public class Shooter : MonoBehaviour, ThongTInSungManager
         VienDan dan = Instantiate(viendan[UnityEngine.Random.Range(0, viendan.Length)], spawnDan.transform.position, Quaternion.Euler(a)) as VienDan;
         dan.setSpeed(TocDoBay);
         dan.setDamage(Damage);
-        m_BanLanCuoi_Time = Time.time;
     }
 
     protected virtual void PlayAudioShoot()
     {
-        if (HieuHung.codeEffectShoot != null)
+        if (AmThanh.AudioShoot != null)
         {
             AmThanh.AudioShoot.Play();
         }
@@ -114,10 +116,11 @@ public class Shooter : MonoBehaviour, ThongTInSungManager
             LogW("Chưa kh báo HIỆU ỨNG BẮN cho súng " + gameObject.name);
         }
     }
-    void LogW(string s)
+    protected virtual void LogW(string s)
     {
         Debug.LogWarning(s);
     }
+    #region Get
 
     public string getName()
     {
@@ -158,4 +161,5 @@ public class Shooter : MonoBehaviour, ThongTInSungManager
     {
         return Info.colorifh;
     }
+    #endregion
 }

@@ -70,6 +70,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\LucLac_Shooter.cs" />
     <Compile Include="Assets\Scripts\AudioController.cs" />
     <Compile Include="Assets\Scripts\BuildMap1.cs" />
     <Compile Include="Assets\Scripts\BulletManager.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Assets\Scripts\Gun\LucDoc_Shooter.cs" />
     <Compile Include="Assets\Scripts\Gun\LucLua_Shooter.cs" />
     <Compile Include="Assets\Scripts\Gun\M4A1_Shooter.cs" />
+    <Compile Include="Assets\Scripts\Gun\MP5_Shooter.cs" />
     <Compile Include="Assets\Scripts\GunController.cs" />
     <Compile Include="Assets\Scripts\GunManager.cs" />
     <Compile Include="Assets\Scripts\HienThiThongTInSung.cs" />

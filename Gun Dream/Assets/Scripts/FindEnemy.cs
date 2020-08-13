@@ -27,11 +27,10 @@ public class FindEnemy : MonoBehaviour
 
     public void Find()
     {
-        GameObject player = PlayerManager.Instance.Player;
-        PlayerController playerControl = player.GetComponent<PlayerController>();
-        if (player != null)
+        PlayerController playerControl = PlayerManager.Instance.Player;
+        if (playerControl != null)
         {
-            Collider[] collider = Physics.OverlapSphere(player.transform.position, viewRadius, enemy);
+            Collider[] collider = Physics.OverlapSphere(playerControl.transform.position, viewRadius, enemy);
             if (collider.Length > 0)
             {
                 float khoangcachgannhat = viewRadius;
@@ -40,7 +39,7 @@ public class FindEnemy : MonoBehaviour
                 {
                     Transform target = collider[i].GetComponent<GetEnemyComponent>().EnemyTarget.gameObject.transform;
                     Transform targetShoot = target.GetComponent<Enemy>().posShoot.transform;
-                    Vector3 huongQuay = (target.position - player.transform.position).normalized;
+                    Vector3 huongQuay = (target.position - playerControl.transform.position).normalized;
                     Vector3 huongLook = (targetShoot.position - playerControl.Eye.transform.position).normalized;
                     float khoangcach = Vector3.Distance(playerControl.Eye.transform.position, targetShoot.transform.position);
                     Debug.DrawRay(playerControl.Eye.transform.position, huongLook * khoangcach, Color.red);

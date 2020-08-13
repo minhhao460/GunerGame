@@ -6,7 +6,7 @@ public class GetGunFromMap : MonoBehaviour
 {
     public Transform AnimationSung;
     public GunManager.TypeSung TypeSung;
-    public GameObject ThisGun;
+    public Shooter ThisGun;
     public Vector3 localScale;
     public bool DestroyOnGet;
 
@@ -19,7 +19,7 @@ public class GetGunFromMap : MonoBehaviour
     }
     public void AddGun(Shooter ThisGun, bool DestroyOnGet)
     {
-        this.ThisGun = ThisGun.gameObject;
+        this.ThisGun = ThisGun;
         TypeSung = ThisGun.LoaiSung;
         localScale = ThisGun.SpawnSung.localScale;
         this.DestroyOnGet = DestroyOnGet;

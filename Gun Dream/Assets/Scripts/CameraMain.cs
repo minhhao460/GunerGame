@@ -15,12 +15,12 @@ public class CameraMain : MonoBehaviour
 
     void FixedUpdate()
     {
-        GameObject player = PlayerManager.Instance.Player;
+        PlayerController player = PlayerManager.Instance.Player;
         if (player != null)
         {
             Vector3 newPos = player.transform.position + KhoangCachCamera;
             Vector3 newPos2 = newPos;
-            if (FindEnemy.Instance.HaveEnemy() && player.GetComponent<PlayerController>().HaveGunInHand())
+            if (FindEnemy.Instance.HaveEnemy() && player.HaveGunInHand())
             {
 
                 

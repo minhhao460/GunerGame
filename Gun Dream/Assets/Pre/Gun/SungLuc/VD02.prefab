@@ -52,7 +52,8 @@ MonoBehaviour:
   TimeToDestroy: 3
   TargetDestroy: {fileID: 2367144069399171526}
   Type: 2
-  No: {fileID: 3785360320588258992, guid: a5adf485a62712647aab0063cfdefa29, type: 3}
+  No: {fileID: 5865702589572827169, guid: 6967ed1a07a7cad40a57f9aaf7a1b46d, type: 3}
+  DiemCham: {fileID: 0}
 --- !u!65 &-7908354190627620284
 BoxCollider:
   m_ObjectHideFlags: 0

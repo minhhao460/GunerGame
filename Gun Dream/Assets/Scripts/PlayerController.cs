@@ -30,7 +30,7 @@ public class PlayerController : LivingOB
     {
         if (SungHienTai != null)
         {
-            SungHienTai.GetComponent<Shooter>().Shoot();
+            SungHienTai.GetComponent<Shooter>().CaltoShoot();
         }
     }
 
@@ -77,14 +77,10 @@ public class PlayerController : LivingOB
         ismoving = ismove;
     }
 
-    public void DungYen()
+    public void setAnimationMove(bool move)
     {
-        animator.SetBool(anim_walk, false);
-    }
-
-    public void Chay()
-    {
-        animator.SetBool(anim_walk, false);
+        animator.SetBool(anim_walk, move);
+        setMove(move);
     }
 
     public void CamSungLuc()

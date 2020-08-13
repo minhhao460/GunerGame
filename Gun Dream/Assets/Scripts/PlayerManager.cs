@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set;}
-    public GameObject[] listPlayer;
+    public PlayerController[] listPlayer;
     public float[] posY;
-    public GameObject Player;
+    public PlayerController Player;
     // Start is called before the first frame update
     private void Awake()
     {

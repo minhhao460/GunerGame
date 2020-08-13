@@ -231,6 +231,8 @@ MonoBehaviour:
   - {fileID: 3027624067700513436, guid: 6fa931356c231fc4f818ff79fa816170, type: 3}
   - {fileID: 3103657502913873080, guid: db161b7af52dea849aca724ffc0e8d2a, type: 3}
   - {fileID: -8516463712520458126, guid: 0ad75eb803402ce4d8ebb69920985884, type: 3}
+  - {fileID: 3329396187692619054, guid: 7962f067354c66343a6c72f3e7b7e24b, type: 3}
+  - {fileID: -6802110834234742065, guid: 8c96a7e23b095d542a0d6b35f08c2ad3, type: 3}
 --- !u!1 &3667910667844945973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1007,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7564530564100761355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 68, y: 2.3, z: 12.1}
+  m_LocalPosition: {x: 68.7, y: 2.3, z: 11.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9166977975613799302}

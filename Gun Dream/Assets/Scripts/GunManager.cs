@@ -16,7 +16,7 @@ public class GunManager : MonoBehaviour
     public HienThiThongTInSung hienthi;
 
     [HideInInspector]
-    public GameObject GunFromMap;
+    public Shooter GunFromMap;
     [HideInInspector]
     public GetGunFromMap SpawnGunFromMap;
     [HideInInspector]
@@ -60,15 +60,15 @@ public class GunManager : MonoBehaviour
         }
     } 
 
-    public void  getSung(TypeSung type, GameObject Sung)
+    public void  getSung(TypeSung type, Shooter Sung)
     {
         if (type == TypeSung.SungLuc)
         {
             CheckGunToDesTroy();
             PlayerController playercontroller = PlayerManager.Instance.Player.GetComponent<PlayerController>();
             AudioController.Instance.PlayAudio("ThaySung");
-            GameObject sung = Instantiate(Sung, playercontroller.SpawnSungLuc.transform);
-            playercontroller.setSungHienTai(sung);
+            Shooter sung = Instantiate(Sung, playercontroller.SpawnSungLuc.transform) as Shooter;
+            playercontroller.setSungHienTai(sung.gameObject);
             playercontroller.CamSungLuc();
         }
         if (type == TypeSung.SungTruong)
@@ -76,8 +76,8 @@ public class GunManager : MonoBehaviour
             CheckGunToDesTroy();
             PlayerController playercontroller = PlayerManager.Instance.Player.GetComponent<PlayerController>();
             AudioController.Instance.PlayAudio("ThaySung");
-            GameObject sung = Instantiate(Sung, playercontroller.SpawnSungTruong.transform);
-            playercontroller.setSungHienTai(sung);
+            Shooter sung = Instantiate(Sung, playercontroller.SpawnSungTruong.transform) as Shooter;
+            playercontroller.setSungHienTai(sung.gameObject);
             playercontroller.CamSungTruong();
         }
     }
